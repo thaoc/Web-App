@@ -1,0 +1,125 @@
+/*
+
+Damascus Base CSS
+
+*/
+
+header img {
+    height: 4em;
+	margin-left: 1em;
+}
+
+
+main {
+    color: white;
+}
+
+body {
+    margin-top: 7em;
+	padding: 1em;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+header {
+    background-color: white;
+	font-family: 'Roboto', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7em;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 0 1em 0 black;
+}
+
+header * {
+	margin-left: 4.5em;
+    display: inline;
+}
+
+header li {
+    margin: 0.1em;
+}
+
+header li a {
+    color: #3C491E;
+    text-decoration: none;
+	
+}
+
+a:link {
+ background: #AE6143;
+   background-image: -webkit-linear-gradient(top, #AE6143, #613625);
+   background-image: -moz-linear-gradient(top, #AE6143, #613625);
+   background-image: -ms-linear-gradient(top, #AE6143, #613625);
+   background-image: -o-linear-gradient(top, #AE6143, #613625);
+   background-image: linear-gradient(to bottom, #AE6143, #613625);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: 'Roboto', sans-serif;
+   padding: 1em;
+   box-shadow: 1px 1px 20px 0px #000000;
+   -webkit-box-shadow: 1px 1px 20px 0px #000000;
+   -moz-box-shadow: 1px 1px 20px 0px #000000;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #3C491E 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+}
+
+a:visited {
+ background: #AE6143;
+   background-image: -webkit-linear-gradient(top, #AE6143, #613625);
+   background-image: -moz-linear-gradient(top, #AE6143, #613625);
+   background-image: -ms-linear-gradient(top, #AE6143, #613625);
+   background-image: -o-linear-gradient(top, #AE6143, #613625);
+   background-image: linear-gradient(to bottom, #AE6143, #613625);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: 'Roboto', sans-serif;
+   padding: 1em;
+   box-shadow: 1px 1px 20px 0px #000000;
+   -webkit-box-shadow: 1px 1px 20px 0px #000000;
+   -moz-box-shadow: 1px 1px 20px 0px #000000;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #3C491E 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+}
+
+a:hover, a:active {
+   background: #3C491E;
+   background-image: -webkit-linear-gradient(top, #3C491E, #1F2610);
+   background-image: -moz-linear-gradient(top, #3C491E, #1F2610);
+   background-image: -ms-linear-gradient(top, #3C491E, #1F2610);
+   background-image: -o-linear-gradient(top, #3C491E, #1F2610);
+   background-image: linear-gradient(to bottom, #3C491E, #1F2610);
+   text-decoration: none;
+}
+
+.footer {
+	font-family: 'Roboto', sans-serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #AE6143;
+    color: white;
+    text-align: center;
+	box-shadow: 0 0 0 0.1em black;
+}
