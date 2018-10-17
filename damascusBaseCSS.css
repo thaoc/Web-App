@@ -15,10 +15,112 @@ main {
 }
 
 body {
+	background-image: url("leaves.png");
+	font-family: Roboto Light;
     margin-top: 7em;
 	padding: 1em;
 	margin-bottom: 7em;
 	overflow-x: hidden;
+}
+
+label
+{
+	font-family: open sans;
+	font-weight: bold;
+}
+
+.button
+{
+	font-family: open sans;
+	font-weight: bold;
+	font-size: 1em;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	height: 3em;
+	width: 10em;
+	text-align:center;
+}
+
+.submit
+{
+	margin: 1em;
+}
+
+.column
+{
+	border: 2px solid black;
+	height: 25em;
+	display: inline-block;
+    width: 20%;
+	padding: 1em;
+	vertical-align: top;
+	margin: 2em auto;
+	text-align:left;
+}
+
+.wrapper
+{
+	background: white;
+	border: 2px solid black;
+	text-align:center;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#login
+{
+	font-family: open sans;
+	position: relative;
+	padding: 2.5em;
+	margin: 2em auto;
+	text-align:center;
+}
+
+#loginStaff
+{
+	display: inline-block;
+    width: 30%;
+	margin-right: 2.5em;
+    vertical-align: top;
+	text-align:left;
+}
+#fieldset
+{
+	border-style: ridge;
+	border-radius: 5px; 
+}
+#loginResident
+{
+	display: inline-block;
+    width: 30%;
+	margin-left: 2.5em;
+	text-align:left;
+}
+
+#emailTextBox
+{
+	height: 2em;
+	width: 15em;
+	border-style: ridge;
+	border-radius: 7.5px;
+	margin: 0 0 0 .5em;
+}
+
+#passwordTextBox
+{
+	height: 2em;
+	width: 15em;
+	border-style: ridge;
+	border-radius: 7.5px;
+	margin: 0 0 0 3em;
+}
+
+@media screen and (max-width: 600px) 
+{
+     #loginStaff, #loginResident
+     {
+          max-width: 100%;
+     }
 }
 
 h1, h2, h3, h4 {
