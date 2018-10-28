@@ -43,6 +43,8 @@
 		
 <h1> Residents </h1>
 
+
+
 <p>
 <!-- Buttons to choose list or grid view -->
 <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
@@ -52,30 +54,86 @@
     <form action="/#.php">
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
+	  <br><br>
+	    	    <div id="radio">
+  <label>Sort By:</label>
+  <ul>
+    <li><input type="radio"  name = "sorter"> First Name</li>
+    <li><input type="radio"  name = "sorter" > Last Name</li>
+  </ul>
+</div>
     </form>
   </div>
+  
+  <!-- Code will programmatically update with database values later and create links based on
+  residents names drawn from database. This is only dummy data to show what it will look like when
+  finished. -->
 
 <div class="row">
-  <div class="column2" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
+  <div class="column2" style="background-color:#FFC7AF;">
+  	<div id = "outer">	
+    <h2>John Doe</h2><br>
+					<div class="residentButtons">
+						<input type="button" value="Add Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="Resident Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="View Profile" class="button">
+					</div>
+					
   </div>
-  <div class="column2" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
   </div>
-</div>
+ <div class="row">
+  <div class="column2" style="background-color:#B6D794;">
+  	<div id = "outer">	
+    <h2>Sam Smith</h2><br>
+					<div class="residentButtons">
+						<input type="button" value="Add Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="Resident Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="View Profile" class="button">
+					</div>
+					
+  </div>
+  </div>
 
 <div class="row">
-  <div class="column2" style="background-color:#ccc;">
-    <h2>Column 3</h2>
-    <p>Some text..</p>
+  <div class="column2" style="background-color:#FFC7AF;">
+  	<div id = "outer">	
+    <h2>Jacob Jingleheimerschmidt</h2><br>
+					<div class="residentButtons">
+						<input type="button" value="Add Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="Resident Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="View Profile" class="button">
+					</div>
+					
   </div>
-  <div class="column2" style="background-color:#ddd;">
-    <h2>Column 4</h2>
-    <p>Some text..</p>
   </div>
-</div>
+ <div class="row">
+  <div class="column2" style="background-color:#B6D794;">
+  	<div id = "outer">	
+    <h2>Osmosis Jones</h2><br>
+					<div class="residentButtons">
+						<input type="button" value="Add Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="Resident Call" class="button">
+					</div>
+					<div class="residentButtons">
+						<input type="button" value="View Profile" class="button">
+					</div>
+					
+  </div>
+  </div>
   </p>
 		</div>
   <script src="scripts.js"></script>

@@ -40,6 +40,34 @@ label
 	text-align:center;
 }
 
+.residentButtons
+{
+	font-family: open sans;
+	font-weight: bold;
+	font-size: 1em;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	height: 3em;
+	width: 10em;
+	text-align:center;
+	display: inline-block;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+
+#radio label {
+  float: left;
+}
+#radio ul {
+  margin: 0;
+  list-style: none;
+  float: left;
+  display: inline-block;
+}
+
 .submit
 {
 	margin: 1em;
@@ -62,6 +90,7 @@ label
     float: left;
     width: 50%;
     padding: 10px;
+
 }
 
 /* Clear floats after the columns */
@@ -146,7 +175,7 @@ label
      }
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	font-family: 'Roboto', sans-serif;
 	float: center;
 	text-align: center;
