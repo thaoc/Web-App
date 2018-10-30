@@ -84,6 +84,12 @@
 						<label for="date">Date of Visit: <span class="req"></span></label> <input type="date" name="date" id="date"><br /><br />
 						<p>Please enter the times below in military time (for example: 11AM would be 11:00 but 11PM would be 22:00)</p>
 						<label for="arriveTime">Estimated time of arrival at this location: <span class="req"></span></label>  <input type="time" size="65" name="arriveTime" id="arriveTime"><br /><br />
+						<!-- looking for a way to make the "Driver" or "Routes" text boxes pop up only if that transportation mode is selected -->
+						<label for="transportMode">Method of transportation to location:</label><br />
+						<input type="radio" name="transportMode" value="car"> Car  <br />
+						<input type="radio" name="transportMode" value="bus"> Bus <br />
+						<p>If you selected "Car" above, please enter the information for the driver in the space below.  If you selected "Bus", please enter the information for <strong>all</strong> of the routes you will take.</p>						
+						<input type="radio" name="transportMode" value="female">
 						<label for="departTime">Estimated time of departure from this location:<span class="req"></span></label> <input type="time" size="65" name="departTime" id="departTime"><br /><br />
 						<label for="estTotalTime">Estimated total time at location: <span class="req"></span></label><br/><input type="text" size="65" name="estTotalTime" id="estTotalTime" value="How long will you be here?"><br /><br />
 						<label for="reasonForVisit">Reason/Purpose of visit:<span class="req"></span></label><br />
