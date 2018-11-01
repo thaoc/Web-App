@@ -2,11 +2,11 @@
 
 <html lang="en">
 
-<?php include "lib/head.php"?>
+<?php include "lib/head.php" ?>
 
 <body>
 
-<?php include "lib/menu.php"?>
+<?php include "lib/menu.php" ?>
 		
 <form>
 <div class="wrapper">
@@ -61,7 +61,7 @@
 </div>
 </form>
 		
-		<?php include "lib/footer.php"?>
-  <?php include "lib/script.php"?>
+		<?php include "lib/footer.php" ?>
+  <?php include "lib/script.php" ?>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "lib/head.php"?>
+<?php include "lib/head.php" ?>
 
 <body>
-    <?php include "lib/menu.php "?>
+    <?php include "lib/menu.php " ?>
     <form>
         <fieldset>
         <legend>Staff Login</legend><br>
