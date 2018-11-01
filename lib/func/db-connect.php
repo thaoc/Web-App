@@ -32,6 +32,9 @@ function databaseConnection($databaseName)
  * @param string $result result set to display as 2D array
  * @param string $sql SQL string used to display an error msg
  *
+ * This could be a different arrangement rather than a table,
+ * Table works, but is not responsive
+ *
  * @return void
  */
 function displayResult($result, $sql) {
@@ -45,7 +48,7 @@ function displayResult($result, $sql) {
         // Print field names as table headings
         foreach ($heading as $key =>$value)
         {
-            echo "<th>" .$key . "</th>\n";
+            echo "<th scope='col'>" .$key . "</th>\n";
         }
         echo "</tr>";
         // Print the value for the first row
