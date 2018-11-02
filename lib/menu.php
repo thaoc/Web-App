@@ -1,5 +1,6 @@
 <?php
-    define('HOME', getcwd().'/pages/damascusBaseAdmin.php');
+    // Define menu URL's here so they are always based on the current working directory
+    define('HOME', getcwd().'/index.php');
     define('RESIDENT', getcwd().'/pages/damascusBaseResident.php');
     define('PROFILE', getcwd().'/pages/damascusBaseProfile.php');
     define('LOGIN', getcwd().'/pages/damascusStaffLogin.php');
