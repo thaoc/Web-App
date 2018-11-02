@@ -1,3 +1,10 @@
+<?php
+    define('HOME', getcwd().'/pages/damascusBaseAdmin.php');
+    define('RESIDENT', getcwd().'/pages/damascusBaseResident.php');
+    define('PROFILE', getcwd().'/pages/damascusBaseProfile.php');
+    define('LOGIN', getcwd().'/pages/damascusStaffLogin.php');
+?>
+
 <!-- TOP NAVBAR AND LOGO -->
 <header>
 	<img src="img/DW Logo.png">
@@ -11,10 +18,13 @@
 			<span></span>
 
 			<ul id="menu">
-				<a href="#"><li>Home</li></a>
-				<a href="#"><li>Resident List</li></a>
-				<a href="#"><li>Profile</li></a>
-				<a href="#"><li>Log In/Out</li></a>
+                <?php
+                echo "<a class='btn' href='" . HOME . "'><li>Home</li></a>";
+                echo "<a class='btn' href='" . RESIDENT . "'><li>Resident List</li></a>";
+                echo "<a class='btn' href='" . LOGIN . "'><li>Log In/Out</li></a>";
+				echo "<a class='btn' href='" . PROFILE . "'><li>Profile</li></a>";
+
+				?>
 			</ul>
 		</div>
 	</nav>
