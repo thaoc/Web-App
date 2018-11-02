@@ -1,14 +1,19 @@
 <?php
+
     // Define menu URL's here so they are always based on the current working directory
-    define('HOME', getcwd().'/index.php');
-    define('RESIDENT', getcwd().'/pages/damascusBaseResident.php');
-    define('PROFILE', getcwd().'/pages/damascusBaseProfile.php');
-    define('LOGIN', getcwd().'/pages/damascusStaffLogin.php');
+    $homeDir = $_SERVER['HOME'];
+
+    define('HOME', $homeDir .'/index.php');
+    define('RESIDENT', $homeDir .'/pages/damascusBaseResident.php');
+    define('PROFILE', $homeDir .'/pages/damascusBaseProfile.php');
+    define('LOGIN', $homeDir.'/pages/damascusLoginStaff.php');
 ?>
 
 <!-- TOP NAVBAR AND LOGO -->
 <header>
-	<img src="img/DW Logo.png">
+	<?PHP
+	echo "<img src='" . $homeDir . "../img/DW Logo.png'>";
+	?>
 	<nav role='navigation'>
 		<div id="menuToggle">
 
