@@ -7,6 +7,6 @@
  * Date: 10/31/2018
  * Time: 10:38 PM
  */
-?>
-<script src="script/scripts.js"></script>
-<!--<link rel="stylesheet" type="text/css" href="../style/damascusOverrideCSS.css">-->
+    $homeDir = $_SERVER['HOME'];
+    echo "<script src='" . $homeDir . "../script/scripts.js'></script>";
+    //echo "<link rel='stylesheet' type='text/css' href='" . $homeDir . "../style/damascusOverrideCSS.css'>";
