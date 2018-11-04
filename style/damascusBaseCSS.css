@@ -361,3 +361,18 @@ a:hover
     text-align: center;
 	box-shadow: 0 0 0 0.1em black;
 }
+
+/* Custom  damascus-way bootstraps overrides*/
+
+.dw-col {
+
+}
+
+.dw-row {
+
+}
+
+.dw-container {
+    border-radius: 5px;
+    box-shadow: 10px 15px 15px #4C5B5C;
+}
