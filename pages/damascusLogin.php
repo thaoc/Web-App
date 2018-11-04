@@ -4,7 +4,12 @@
 <?php include "../lib/head.php" ?>
 
 <body>
-    <?php include "../lib/menu.php " ?>
+    <header>
+        <?PHP
+	        echo "<img src='" . $homeDir . "../img/DW Logo.png'>";
+	    ?>
+    </header>
+    
     <form>
         <fieldset>
         <legend>Staff Login</legend><br>
@@ -15,6 +20,11 @@
             <input type="submit" id="btnLogin" value="Login"></p><br>
         </fieldset>
     </form>
+     
+<?php
+    echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
+?>
+    
 <?php include "../lib/footer.php"?>
 <?php include "../lib/script.php"?>
 </body>    
