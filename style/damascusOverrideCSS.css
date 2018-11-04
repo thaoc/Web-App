@@ -9,20 +9,13 @@
 
 #btnLogin {
     border-radius: 2pt;
-    /*background-color: #75A442; /* Kelly Green */
     box-shadow: 1pt 1pt 2pt #A9A9A9; /* light grey */
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12pt;
-}
-
-body{
-    margin-top: 0;
+    width: 4em;
 }
 
 fieldset{
     background-color: white;
-    border-color: #75A442; /* Kelly Green */
-    /* #037264 - Deep Teal         */
+    /*border: 1.8pt solid #75A442; /* Kelly Green */
     border-radius: 3pt;
     box-shadow: 2pt 2pt 5pt #A9A9A9; /* light grey */
 }
@@ -31,20 +24,13 @@ form {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8em;
+    margin-top: 6em;
     text-align: center;
-    width: 25em;
-}
-
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+    width: 23em;
 }
 
 legend {
     font-family: 'Open Sans', sans-serif;
-    font-size: 14pt;
+    font-size: 15pt;
     color: #75A442;
 }
