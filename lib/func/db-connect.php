@@ -39,9 +39,9 @@ function databaseConnection($databaseName)
  */
 function displayResult($result, $sql) {
 
-    if ($result ->num_rows > 0)
+    /*if ($result ->num_rows > 0)
     {
-        echo "<table class=\"table table-striped table-hover table-responsive\">\n";
+        echo "<div class=\"table table-striped table-hover table-responsive\">\n";
         // Print headings (field names)
         $heading = $result ->fetch_assoc();
         echo "<tn>\n";
@@ -70,7 +70,39 @@ function displayResult($result, $sql) {
             }
             echo "</tr>\n";
         }
-        echo "</table>\n";
+        echo "</table>\n";*/
+	if ($result ->num_rows > 0)
+	{
+		echo "<div class='container'>\n";
+		/*// Print headings (field names)
+		$heading = $result ->fetch_assoc();
+		echo "<div class='row'>\n";
+		// Print field names as table headings
+		foreach ($heading as $key =>$value)
+		{
+			echo "<div class='col-md-4'>" .$key . "</div>\n";
+		}
+		echo "</div>";
+		// Print the value for the first row
+		echo "<div class='row'>";
+		foreach ($heading as $key=>$value)
+		{
+			echo "<div class='col-md-4'>" . $value . "</div>\n";
+		}*/
+		// Output each record
+		while ($row = $result ->fetch_assoc())
+		{
+			//print_r($row);
+			//echo "<br>";
+			echo "<div class='row'>\n";
+			// Print the data
+			foreach ($row as $key=>$value)
+			{
+				echo "<div class='col-md-4'>" . $key . ": <br> " . $value . "</div>\n";
+			}
+			echo "</div>\n";
+		}
+		echo "</div>\n";
 // No results
     }
 
