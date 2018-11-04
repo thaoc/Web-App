@@ -74,21 +74,7 @@ function displayResult($result, $sql) {
 	if ($result ->num_rows > 0)
 	{
 		echo "<div class='container dw-container wrapper'>\n";
-		/*// Print headings (field names)
-		$heading = $result ->fetch_assoc();
-		echo "<div class='row'>\n";
-		// Print field names as table headings
-		foreach ($heading as $key =>$value)
-		{
-			echo "<div class='col-md-4'>" .$key . "</div>\n";
-		}
-		echo "</div>";
-		// Print the value for the first row
-		echo "<div class='row'>";
-		foreach ($heading as $key=>$value)
-		{
-			echo "<div class='col-md-4'>" . $value . "</div>\n";
-		}*/
+
 		// Output each record
 		while ($row = $result ->fetch_assoc())
 		{
@@ -98,7 +84,8 @@ function displayResult($result, $sql) {
 			// Print the data
 			foreach ($row as $key=>$value)
 			{
-				echo "<div class='col-md-4 dw-col'>" . $key . ": <br> " . $value . "</div>\n";
+				$formattedText = str_replace("_", " ", $key);
+				echo "<div class='col-md-4 dw-col'>" . $formattedText . ": <br> " . $value . "</div>\n";
 			}
 			echo "</div>\n";
 		}
