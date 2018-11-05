@@ -4,11 +4,7 @@
 <?php include "../lib/head.php" ?>
 
 <body>
-    <header>
-        <?PHP
-	        echo "<img src='" . $homeDir . "../img/DW Logo.png'>";
-	    ?>
-    </header>
+    <?php include "../lib/menu.php"?>
     
     <form>
         <fieldset>
