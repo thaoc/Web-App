@@ -7,6 +7,7 @@
  * Date: 11/1/2018
  * Time: 1:42 PM
  */
+$home = $_SERVER['HOME'];
 require_once getcwd()."/lib/func/db-connect.php";
 
 function listResidents() {

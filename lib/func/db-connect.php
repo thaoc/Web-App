@@ -81,6 +81,7 @@ function displayAsDropdown ($result, $sql, $dropdownName, $itemPrefix) {
     if ($result ->num_rows > 0)
     {
         echo "<select name='" . $dropdownName . "'>";
+        echo "<option selected='true' disabled='disabled'>Make a Selection</option>";
         while ($row = $result->fetch_assoc())
         {
             foreach ($row as $key => $value)
