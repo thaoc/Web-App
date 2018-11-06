@@ -18,11 +18,9 @@
 		<div id="menuToggle">
 
 			<input type="checkbox" />
-
-			<span></span>
-			<span></span>
-			<span></span>
-
+            <span></span>
+            <span></span>
+            <span></span>
 			<ul id="menu">
                 <?php
                 echo "<a class='btn' href='" . HOME . "'><li>Home</li></a>";

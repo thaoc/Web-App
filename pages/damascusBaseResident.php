@@ -131,7 +131,7 @@
     </div>
 </div><!-- End Row 5 -->
 
-<div class="row dw-row"
+<div class="row dw-row">
     <div class="col-md-4">
 	<label>Weight:<span class="req"></span></label></br>
 	<input type="number" name="offenderWeight" id="offenderInput" value="125"/></br></br>
@@ -190,8 +190,10 @@
 </div><!-- End Row 8 -->
 
 <div class="row dw-row">
+    <div class="col-md-12">
     <div class="submit">
 	<input type="submit" value="Submit" class="button">
+    </div>
     </div>
 </div>
 </form>
