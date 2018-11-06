@@ -1,9 +1,12 @@
 <?php
+//ini_set('display_errors', 1);
+
 /**
 * @param string $databaseName Enter the name of the database to connect to.
 *
 * @return void
 */
+
 function databaseConnection($databaseName)
 {
 	// Set up connection constants
@@ -39,38 +42,6 @@ function databaseConnection($databaseName)
  */
 function displayResult($result, $sql) {
 
-    /*if ($result ->num_rows > 0)
-    {
-        echo "<div class=\"table table-striped table-hover table-responsive\">\n";
-        // Print headings (field names)
-        $heading = $result ->fetch_assoc();
-        echo "<tn>\n";
-        // Print field names as table headings
-        foreach ($heading as $key =>$value)
-        {
-            echo "<th scope='col'>" .$key . "</th>\n";
-        }
-        echo "</tr>";
-        // Print the value for the first row
-        echo "<tr>";
-        foreach ($heading as $key=>$value)
-        {
-            echo "<td>" . $value . "</td>\n";
-        }
-        // Output each record
-        while ($row = $result ->fetch_assoc())
-        {
-            //print_r($row);
-            //echo "<br>";
-            echo "<tr>\n";
-            // Print the data
-            foreach ($row as $key=>$value)
-            {
-                echo "<td>" . $value . "</td>>\n";
-            }
-            echo "</tr>\n";
-        }
-        echo "</table>\n";*/
 	if ($result ->num_rows > 0)
 	{
 		echo "<div class='container dw-container wrapper'>\n";
@@ -98,6 +69,34 @@ function displayResult($result, $sql) {
         echo"<Strong>Zero results using SQL: </Strong>" . $sql;
     }
 } // end of displayResult( )
+
+/**
+ * @param $result
+ * @param $sql
+ * @param $dropdownName
+ * @param $itemPrefix
+ */
+function displayAsDropdown ($result, $sql, $dropdownName, $itemPrefix) {
+
+    if ($result ->num_rows > 0)
+    {
+        echo "<select name='" . $dropdownName . "'>";
+        while ($row = $result->fetch_assoc())
+        {
+            foreach ($row as $key => $value)
+            {
+                $formattedText = str_replace(" ", "_", $value);
+                $formattedText = strtolower($formattedText);
+                echo "<option value='" . $itemPrefix . "_" . $formattedText . "'>" . $value . "</option>";
+            }
+
+        }
+        echo "</select>";
+    }
+    else {
+        echo"<Strong>Dropdown does not contain any values: </Strong>" . $sql;
+    }
+}
 
 /********************************************
  * runQuery( ) - Execute a query and display message
@@ -131,7 +130,7 @@ function runQuery($conn, $sql, $msg, $echoSuccess) {
  *
  * @return mysqli_result
  */
-function GetRowValue ($tableName, $idField, $fieldName, $searchTerm) {
+function SearchGetRowValue ($tableName, $idField, $fieldName, $searchTerm) {
     databaseConnection("damascus_way");
     $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
     if($conn->connect_error){

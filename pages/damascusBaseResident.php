@@ -1,3 +1,10 @@
+<?PHP
+
+    $home = $_SERVER['HOME'];
+    require_once $home . "../lib/func/form-generator.php";
+    //ini_set('display_errors', 1);
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -70,13 +77,14 @@
 <div class="column">
 
 	<label>Eye Color:<span class="req"></span></label></br>
-		<select name="eyeColor" id="offenderInput">
+		<?php rowQueryHelper("Eye_Color", "Eye_description", "Eye_Color", "eye_color")?>
+        <!--<select name="eyeColor" id="offenderInput">
 			<option value="amber">Amber</option>
 			<option value="blue">Blue</option>
 			<option value="brown">Brown</option>
 			<option value="green">Green</option>
 			<option value="hazel">Hazel</option>
-		</select></br></br>
+		</select></br></br>-->
 		
 	<label>Hair Color:<span class="req"></span></label></br>
 		<select name="hairColor" id="offenderInput">
