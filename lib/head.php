@@ -6,14 +6,11 @@
 	<title>Damascus Way</title>
 	<meta name="description" content="Damascus Way">
 	<meta name="author" content="Damascus Way">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 
     <?php
         echo "<link rel='icon' type='image/png' href='" . $homeDir . "/img/favicon.png'>";
         echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusBaseCSS.css?v=1.0'>";
     ?>
-
-
-
 </head>
