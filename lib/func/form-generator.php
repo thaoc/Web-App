@@ -35,7 +35,7 @@ require_once $home ."../lib/func/db-connect.php";
  * @param $dropdownName
  * @param $itemPrefix
  */
-function rowQueryHelper($tableName, $columnName, $dropdownName, $itemPrefix) {
+function dropdownHelper($tableName, $columnName, $dropdownName, $itemPrefix) {
 
     try
     {

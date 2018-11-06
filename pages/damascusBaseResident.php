@@ -16,47 +16,64 @@
 <?php include "../lib/menu.php" ?>
 
 <form>
-<div class="wrapper">
+<div class="wrapper container-fluid dw-container">
 <div class="resident">
 	<h2>Resident Profile</h2>
 </div>	
-<div class="column">
-	<label>Offender ID:<span class="req"></span></label></br>
-	<input type="text" name="offenderID" id="offenderInput" value="Offender ID"/></br></br>
-	
+<div class="row dw-row">
+    <!--<label>Offender ID:<span class="req"></span></label></br>
+	<input type="text" name="offenderID" id="offenderInput" value="Offender ID"/></br></br>-->
+	<div class="col-md-4">
 	<label>First Name:<span class="req"></span></label></br>
-	<input type="text" name="offenderFirstName" id="offenderInput" value="First Name"/></br></br>
-	
+	<input type="text" name="offenderFirstName" id="offenderInput" value="First Name" tabindex="1"/></br></br>
+    </div>
+
+    <div class="col-md-4">
 	<label>Last Name:<span class="req"></span></label></br>
 	<input type="text" name="offenderLastName" id="offenderInput" value="Last Name"/></br></br>
-	
+    </div>
+
+    <div class="col-md-4">
 	<label>Photo:<span class="req"></span></label></br>
 	<input type="file" name="offenderImage" id="offenderInput"></br></br>
-	
-	<label>Offense:<span class="req"></span></label></br>
+    </div>
+</div><!-- End Row 1 -->
+
+<div class="row">
+    <div class="col-md-4">
+    <label>Offense:<span class="req"></span></label></br>
 	<input type="text" name="offenderOffense" id="offenderInput" value="Offense"/></br></br>
-	
+    </div>
+
+    <div class="col-md-4">
 	<label>Sex Offender?<span class="req"></span></label></br>
 		<select name="sexOffender" id="offenderInput">
 			<option value="yes">Yes</option>
 			<option value="no">No</option>
          </select><br><br>
-		 
+    </div>
+	<div class="col-md-4">
 	<label>Risk Level:<span class="req"></span></label></br>
 		<select name="offenderRiskLevel"id="offenderInput">
 			<option value="low">Low</option>
 			<option value="medium">Medium</option>
 			<option value="High">High</option>
 		</select><br><br>
-</div>
+    </div>
+</div><!-- End Row 2 -->
 
-<div class = "column">
+<div class = "row dw-row">
+    <div class="col-md-4">
 	<label>Admit Date:<span class="req"></span></label></br>
 	<input type="date" name="offenderAdmitDate" id="offenderInput"/></br></br>
-	
+    </div>
+
+    <div class="col-md-4">
 	<label>Exit Date:<span class="req"></span></label></br>
 	<input type="date" name="offenderExitDate" id="offenderInput"/></br></br>
-	
+    </div>
+
+    <div class="col-md-4">
 	<label>Facility:<span class="req"></span></label></br>
 		<select name="facility" id="offenderInput">
 			<option value="minnepolis">Minneapolis</option>
@@ -77,24 +94,25 @@
 <div class="column">
 
 	<label>Eye Color:<span class="req"></span></label></br>
-		<?php rowQueryHelper("Eye_Color", "Eye_description", "Eye_Color", "eye_color")?>
+		<?php dropdownHelper("Eye_Color", "Eye_Color_Description", "Eye_Color", "eye_color")?>
         <!--<select name="eyeColor" id="offenderInput">
 			<option value="amber">Amber</option>
 			<option value="blue">Blue</option>
 			<option value="brown">Brown</option>
 			<option value="green">Green</option>
 			<option value="hazel">Hazel</option>
-		</select></br></br>-->
+		</select>--></br></br>
 		
 	<label>Hair Color:<span class="req"></span></label></br>
-		<select name="hairColor" id="offenderInput">
+		<?php dropdownHelper("Hair_Color", "Hair_Color_Description", "Hair_Color", "hair_color")?>
+        <!--<select name="hairColor" id="offenderInput">
 			<option value="auburn">Auburn</option>
 			<option value="black">Black</option>
 			<option value="blonde">Blonde</option>
 			<option value="brown">Brown</option>
 			<option value="gray">Gray</option>
 			<option value="red">Red</option>
-		</select></br></br>
+		</select>--></br></br>
 		
 	<label>Height:<span class="req"></span></label></br>
 	<input type="number" name="offenderHeight" value="72"/></br></br>
@@ -103,13 +121,14 @@
 	<input type="number" name="offenderWeight" id="offenderInput" value="125"/></br></br>
 	
 	<label>Race:<span class="req"></span></label></br>
-		<select name="race" id="offenderInput">
+		<?php dropdownHelper("Race", "Race_Description", "Race", "race")?>
+        <!--<select name="race" id="offenderInput">
 			<option value="nativeAmerican">Native American</option>
 			<option value="asian">Asian</option>
 			<option value="africanAmerican">African American</option>
 			<option value="caucasion">Caucasion</option>
 			<option value="hispanicLation">Hispanic/Lation</option>
-		</select></br></br>
+		</select>--></br></br>
 		
 	<label>Date of Birth:<span class="req"></span></label></br>
 	<input type="date" name="offenderDateOfBirth" id="offenderInput"/></br></br>
