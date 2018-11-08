@@ -21,6 +21,7 @@ function listResidents() {
     $result = $conn->query($sql);
 
     displayResult($result, $sql);
+    $conn->close();
 
 }
 

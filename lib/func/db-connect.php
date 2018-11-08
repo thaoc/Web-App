@@ -35,8 +35,6 @@ function databaseConnection($databaseName)
  * @param string $result result set to display as 2D array
  * @param string $sql SQL string used to display an error msg
  *
- * This could be a different arrangement rather than a table,
- * Table works, but is not responsive
  *
  * @return void
  */
