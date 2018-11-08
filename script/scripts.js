@@ -18,3 +18,16 @@ function listView() {
   }
 }
 
+// Database query helper functions
+// TODO: This uses AJAX and there might be a better way using pure PHP
+//====================================================
+function getRowID (tableName){
+  rowID = '';
+
+
+
+  return rowID;
+}
+
+
+//====================================================

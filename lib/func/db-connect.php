@@ -35,8 +35,6 @@ function databaseConnection($databaseName)
  * @param string $result result set to display as 2D array
  * @param string $sql SQL string used to display an error msg
  *
- * This could be a different arrangement rather than a table,
- * Table works, but is not responsive
  *
  * @return void
  */
@@ -75,13 +73,15 @@ function displayResult($result, $sql) {
  * @param $sql
  * @param $dropdownName
  * @param $itemPrefix
+ *
+ * TODO: add an onchange that queries the database for row value
  */
 function displayAsDropdown ($result, $sql, $dropdownName, $itemPrefix) {
 
     if ($result ->num_rows > 0)
     {
         echo "<select name='" . $dropdownName . "'>";
-        echo "<option selected='true' disabled='disabled'>Make a Selection</option>";
+        echo "<option selected='true' disabled='disabled' onchange=''>Make a Selection</option>";
         while ($row = $result->fetch_assoc())
         {
             foreach ($row as $key => $value)
@@ -131,7 +131,7 @@ function runQuery($conn, $sql, $msg, $echoSuccess) {
  *
  * @return mysqli_result
  */
-function SearchGetRowValue ($tableName, $idField, $fieldName, $searchTerm) {
+function searchGetRowId ($tableName, $idField, $fieldName, $searchTerm) {
     databaseConnection("damascus_way");
     $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
     if($conn->connect_error){
