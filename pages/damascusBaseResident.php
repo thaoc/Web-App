@@ -14,7 +14,7 @@
 <body>
 
 <?php include "../lib/menu.php" ?>
-
+<form action="insertResident.php" method="post">
 <form>
 <div class="wrapper container-fluid dw-container">
 <div class="resident">
@@ -27,6 +27,11 @@
 	<label>First Name:<span class="req"></span></label></br>
 	<input type="text" name="offenderFirstName" id="offenderInput" value="First Name" tabindex="1"/></br></br>
     </div>
+	
+	<div class="col-md-4">
+	<label>Middle Name:<span class="req"></span></label></br>
+	<input type="text" name="offenderMiddleName" id="offenderInput" value="Middle Name"/></br></br>
+    </div>
 
     <div class="col-md-4">
 	<label>Last Name:<span class="req"></span></label></br>
@@ -36,6 +41,11 @@
     <div class="col-md-4">
 	<label>Photo:<span class="req"></span></label></br>
 	<input type="file" name="offenderImage" id="offenderInput"></br></br>
+    </div>
+	
+	<div class="col-md-4">
+	<label>Birthplace:<span class="req"></span></label></br>
+	<input type="text" name="offenderBirthplace" id="offenderInput" value="Birthplace"/></br></br>
     </div>
 </div><!-- End Row 1 -->
 
@@ -129,12 +139,22 @@
 	<label>Height:<span class="req"></span></label></br>
 	<input type="number" name="offenderHeight" value="72"/></br></br>
     </div>
+	
 </div><!-- End Row 5 -->
 
 <div class="row dw-row">
     <div class="col-md-4">
 	<label>Weight:<span class="req"></span></label></br>
 	<input type="number" name="offenderWeight" id="offenderInput" value="125"/></br></br>
+    </div>
+	
+	<div class="col-md-4">
+	<label>Sex:<span class="req"></span></label></br>
+	<select name="offenderSex"/>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	</br></br>
     </div>
 
     <div class="col-md-4">
@@ -180,13 +200,9 @@
 
     <div class="col-md-4">
 	<label>Password:<span class="req"></span></label></br>
-	<input type="password" name="offenderPassward" id="offenderInput" value="Password"/></br></br>
+	<input type="password" name="offenderPassword" id="offenderInput" value="Password"/></br></br>
     </div>
 
-    <div class="col-md-4">
-	<label>Reenter Password:<span class="req"></span></label></br>
-	<input type="password" name="offenderPassward" id="offenderInput" value="Password"/></br></br>
-    </div>
 </div><!-- End Row 8 -->
 
 <div class="row dw-row">
