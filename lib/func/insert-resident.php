@@ -1,6 +1,7 @@
 <?php
 $home = $_SERVER['HOME'];
-require_once getcwd()."../../lib/func/db-connect.php";
+require_once getcwd()."../lib/func/db-connect.php";
+require_once getcwd()."../lib/func/form-helper.php";
 
 databaseConnection("damascus_way");
     $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);

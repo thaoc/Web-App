@@ -1,7 +1,7 @@
 <?PHP
 
     $home = $_SERVER['HOME'];
-    require_once $home . "../lib/func/form-generator.php";
+    require_once $home . "../lib/func/form-helper.php";
     //ini_set('display_errors', 1);
 ?>
 
@@ -14,8 +14,7 @@
 <body>
 
 <?php include "../lib/menu.php" ?>
-<form action="../lib/func/insertResident.php" method="post">
-<form>
+<form action="../lib/func/debug.php" method="post">
 <div class="wrapper container-fluid dw-container">
 <div class="resident">
 	<h2>Resident Profile</h2>
@@ -114,7 +113,7 @@
 <div class="row dw-row">
     <div class="col-md-4">
 	<label>Eye Color:<span class="req"></span></label></br>
-		<?php dropdownHelper("Eye_Color", "Eye_Color_Description", "Eye_Color", "eye_color")?>
+		<?php dropdownHelper("Eye_Color", "Eye_Color_Description", "Eye_Color", "eye_color");?>
         <!--<select name="eyeColor" id="offenderInput">
 			<option value="amber">Amber</option>
 			<option value="blue">Blue</option>

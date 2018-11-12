@@ -28,6 +28,9 @@ function getRowID (tableName){
 
   return rowID;
 }
-
-
 //====================================================
+
+function variableRedirect(pageName) {
+
+  location.href = pageName;
+}
