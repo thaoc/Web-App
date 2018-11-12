@@ -7,7 +7,7 @@
 <body>
 
 <?php include "../lib/menu.php" ?>
-<form action="insertStaff.php" method="post">		
+<form action="../lib/func/insert-staff.php" method="post">
 <div class="wrapper">
 <div class="resident">
 	<h2>Staff Profile</h2>
