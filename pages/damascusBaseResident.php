@@ -14,7 +14,7 @@
 <body>
 
 <?php include "../lib/menu.php" ?>
-<form action="insertResident.php" method="post">
+<form action="../lib/func/insertResident.php" method="post">
 <form>
 <div class="wrapper container-fluid dw-container">
 <div class="resident">
