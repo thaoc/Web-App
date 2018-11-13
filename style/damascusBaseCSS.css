@@ -35,6 +35,8 @@ label
 	font-weight: bold;
 }
 
+/********************* Resident View Styling *******************/
+
 .button
 {
 	font-family: open sans;
@@ -93,10 +95,31 @@ label
 
  /* Create two equal columns that floats next to each other */
 .column2 {
-    float: left;
-    width: 50%;
+    /*float: left;*/
+    width: 45em;
     padding: 10px;
 
+}
+
+.icon {
+    margin-left: 5pt;
+    height: 30pt; 
+}
+
+.iconimg {
+    float: right;
+    margin-right: 10pt;
+}
+
+.inline {
+    display: inline;
+    float: left;
+    margin-left: 10pt;
+}
+
+.row {
+    margin-left: 300pt;
+    margin-right: 300pt;
 }
 
 /* Clear floats after the columns */
@@ -105,6 +128,8 @@ label
     display: table;
     clear: both;
 } 
+
+/********************* End of Resident View *******************/
 
 .wrapper
 {
@@ -200,7 +225,7 @@ p {
 header {
     background-color: white;
 	font-family: 'Roboto', sans-serif;
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
