@@ -1,5 +1,6 @@
 <?php
 $home = $_SERVER['HOME'];
+
 require_once(getcwd() . "/db-connect.php");
 require_once(getcwd() . "/form-helper.php");
 
@@ -63,13 +64,14 @@ $offenderPassword         = mysqli_real_escape_string($conn, $_REQUEST['offender
 $sql = "insert into Resident(Resident_FName, Resident_MName, Resident_LName, Resident_Photo, Resident_Sex, Resident_Eye_Color_ID_FK, Resident_Hair_Color_ID_FK, Resident_Race_ID_FK, Resident_Height, Resident_Weight, Resident_DOB, Resident_Offense_ID_FK, Resident_Risk_Level_ID_FK, Resident_Sex_Offender, Resident_Birthplace, Resident_Username, Resident_Password)
     values ('$offenderFirstName', '$offenderMiddleName','$offenderLastName', '$offenderImage', '$offenderSex', '$eyeColorID', '$hairColorID', '$raceID', '$offenderHeight', '$offenderWeight', '$offenderDateOfBirth', '$offenseID', '$offenderRiskLevel', '$sexOffender', '$offenderBirthplace', '$offenderUsername', '$offenderPassword')";
 
+
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
     echo $eyeColorID;
+
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-
-
 $conn->close();
+
