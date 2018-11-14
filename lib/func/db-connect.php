@@ -144,3 +144,45 @@ function searchGetRowId ($tableName, $idField, $fieldName, $searchTerm) {
 
     return $result;
 }
+
+
+/**************************************************************
+displayName() - display Resident Last Name and First Name only 
+**************************************************************/
+
+function displayName($result, $sql) {
+
+	if ($result ->num_rows > 0)
+	{
+        echo "<div class='table-responsive-lg'>";
+        echo '<table class="table">';
+
+		// Output each record
+		while ($row = $result ->fetch_assoc())
+		{
+            echo '<tr>';
+            echo '<td>' . $row['Resident_LName'] . ',' . '</td>';
+            echo '<td>' . $row['Resident_FName'] . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Log Call">
+            <img src="../img/interface/png/phone-book.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Call History">
+            <img src="../img/interface/png/clock.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Profile">
+            <img src="../img/interface/png/user-3.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Case Notes">
+            <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
+            echo '</tr>';
+		}
+        echo '</table>';
+		echo "</div>";
+        
+// No results
+    }
+
+    else
+    {
+        echo"<Strong>Zero results using SQL: </Strong>" . $sql;
+    }
+} // end of displayName( )
+
+
