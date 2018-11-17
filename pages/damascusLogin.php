@@ -18,6 +18,7 @@
     </form>
      
 <?php
+    $homeDir = $_SERVER['HOME'];
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
 ?>
     
