@@ -2,11 +2,11 @@
 
 <html lang="en">
 
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 
 <body>
 
-<?php include "../lib/menu.php" ?>
+<?php include "../lib/include/menu.php" ?>
 		
 <h1> DUMMY TEXT </h1>
 
@@ -22,7 +22,7 @@ Ne vel utinam adipiscing, ad sed diam labore noluisse, utamur argumentum in has.
 
 In ius sumo tacimates molestiae. Nisl offendit cotidieque cum id. Wisi voluptatibus necessitatibus ne vel, tritani veritus expetendis est in, vim civibus evertitur eloquentiam id. Ea mel dicam menandri, sumo audiam delectus ei quo.</p>
 		
-<?php include "../lib/footer.php" ?>
-<?php include "../lib/script.php" ?>
+<?php include "../lib/include/footer.php" ?>
+<?php include "../lib/include/script.php" ?>
 </body>
 </html>

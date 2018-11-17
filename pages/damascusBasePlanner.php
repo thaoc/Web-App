@@ -1,11 +1,11 @@
 <!doctype html>
 
 <html lang="en">
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 
 	<body>
 
-		<?php include "../lib/menu.php" ?>
+		<?php include "../lib/include/menu.php" ?>
 		<h2>Resident Daily Planner</h2>
 		<p>Enter the information for one destination on your daily schedule in the form below, then click <strong>Add</strong>. Do this for each location you have on your schedule for the day.</p>
 			<div class="wrapper2">
@@ -76,7 +76,7 @@
 		</div>
 				
 			</div>		
-        <?php include "../lib/footer.php" ?>
-		  <?php include "../lib/script.php" ?>
+        <?php include "../lib/include/footer.php" ?>
+		  <?php include "../lib/include/script.php" ?>
 	</body>
 </html>

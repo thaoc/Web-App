@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 
 <body>
-    <?php include "../lib/menu.php " ?>
+    <?php include "../lib/include/menu.php " ?>
     <form>
         <fieldset>
         <legend>Staff Login</legend><br>
@@ -15,7 +15,7 @@
             <input type="submit" id="btnLogin" value="Login"></p><br>
         </fieldset>
     </form>
-<?php include "../lib/footer.php" ?>
-<?php include "../lib/script.php" ?>
+<?php include "../lib/include/footer.php" ?>
+<?php include "../lib/include/script.php" ?>
 </body>    
 </html>

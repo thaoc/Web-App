@@ -7,7 +7,7 @@ session_destroy();
 <!DOCTYPE html>
 <html>
 <head>
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 </head>
     <div class="form">
           <h1>You are now logging out of Damascus Way.</h1>
@@ -19,7 +19,7 @@ session_destroy();
     </div>
 </div>
 
-	<?php include "../lib/footer.php" ?>
-	<?php include "../lib/script.php" ?>
+	<?php include "../lib/include/footer.php" ?>
+	<?php include "../lib/include/script.php" ?>
 </body>
 </html>

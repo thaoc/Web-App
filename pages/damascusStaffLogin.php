@@ -3,23 +3,21 @@
 
 <?php 
 session_start();
-?>
 
-<?php 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     if (isset($_POST['login'])) { //user logging in
-        require '../lib/staffLogin.php';
+        require '../lib/func/staffLogin.php';
         
     }
 }
-?>
 
-<?php include "../lib/head.php" ?>
+include "../lib/include/head.php"
+?>
 
 
 <body>
-    <?php include "../lib/menu.php" ?>
+    <?php include "../lib/include/menu.php" ?>
      <div class="form">
 
          <div id="login">   
@@ -53,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
 ?>
     
-<?php include "../lib/footer.php" ?>
-<?php include "../lib/script.php" ?>
+<?php include "../lib/include/footer.php" ?>
+<?php include "../lib/include/script.php" ?>
 </body>    
 </html>
