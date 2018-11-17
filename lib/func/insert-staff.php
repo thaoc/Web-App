@@ -3,7 +3,7 @@
 try
 {
     $home = $_SERVER['HOME'];
-    require_once $home . "/db-connect.php";
+    require_once $home . "../lib/func/db-connect.php";
 }
 
 catch (Exception $e){
@@ -50,5 +50,5 @@ catch (Exception $e){
 
 $conn->close();
 
-//success("Staff person successfully added", "damascusBaseStaff.php");
+success("Staff person successfully added", "damascusBaseStaff.php");
 

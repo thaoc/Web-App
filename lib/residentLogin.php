@@ -12,11 +12,11 @@ else { // User exists
     if ( password_verify($_POST['Resident_Password'], $user['Resident_Password']) ) {
         
         $_SESSION['Resident_Username'] = $user['Resident_Username'];
-        $_SESSION['Active'] = $user['Active'];
+        $_SESSION['Resident_Logged_In'] = $user['Resident_Logged_In'];
         
         // This is how we'll know the user is logged in
-        $_SESSION['Active'] = true;
-        header("location: damascusBasePlanner.php");
+        $_SESSION['Resident_Logged_In'] = true;
+        header("location: ../pages/damascusBasePlanner.php");
     }
     else {
         $_SESSION['message'] = "You have entered wrong password, try again!";
