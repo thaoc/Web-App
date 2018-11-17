@@ -5,6 +5,8 @@
 
 <body>
     
+
+<div class="container dw-container">
         <fieldset>
         <legend>Welcome to Damascus Way!</legend><br>
            <form action="../pages/damascusStaffLogin.php">
@@ -16,6 +18,7 @@
 		</form>
 		
         </fieldset>
+</div>
      
 <?php
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
