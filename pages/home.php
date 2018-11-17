@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 
 <body>
     
@@ -24,7 +24,7 @@
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
 ?>
     
-<?php include "../lib/footer.php" ?>
-<?php include "../lib/script.php" ?>
+<?php include "../lib/include/footer.php" ?>
+<?php include "../lib/include/script.php" ?>
 </body>    
 </html>

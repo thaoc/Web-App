@@ -6,7 +6,7 @@
 <!doctype html>
 <html lang="en">
    <?php
-   include "../lib/head.php";
+   include "../lib/include/head.php";
    require_once (getcwd()."/../lib/func/db-connect.php");
       
       databaseConnection("damascus_way");
@@ -16,7 +16,7 @@
           }
       ?>
    <body>
-      <?php include "../lib/menu.php" ?>
+      <?php include "../lib/include/menu.php" ?>
       <form action="../lib/func/insert-resident.php" method="post">
          <div class="wrapper container-fluid dw-container">
          <div class="resident">
@@ -235,7 +235,7 @@
             </div>
          </div>
       </form>
-      <?php include "../lib/footer.php" ?>
-      <?php include "../lib/script.php" ?>
+      <?php include "../lib/include/footer.php" ?>
+      <?php include "../lib/include/script.php" ?>
    </body>
 </html>

@@ -1,4 +1,7 @@
-      <h1>Error</h1>
+<?php
+// Error handler that redirects to home if user is not logged in
+?>
+    <h1>Error</h1>
       <p>
          <?php 
             if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 

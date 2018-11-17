@@ -2,11 +2,11 @@
 
 <html lang="en">
 
-<?php include "../lib/head.php" ?>
+<?php include "../lib/include/head.php" ?>
 
 <body>
 
-<?php include "../lib/menu.php" ?>
+<?php include "../lib/include/menu.php" ?>
 <form action="../lib/func/insert-staff.php" method="post">
 <div class="wrapper">
 <div class="resident">
@@ -66,7 +66,7 @@
 </div>
 </form>
 		
-  <?php include "../lib/footer.php" ?>
-  <?php include "../lib/script.php" ?>
+  <?php include "../lib/include/footer.php" ?>
+  <?php include "../lib/include/script.php" ?>
 </body>
 </html>
