@@ -15,7 +15,7 @@
             <input type="submit" id="btnLogin" value="Login"></p><br>
         </fieldset>
     </form>
-<?php include "../lib/footer.php"?>
-<?php include "../lib/script.php"?>
+<?php include "../lib/footer.php" ?>
+<?php include "../lib/script.php" ?>
 </body>    
 </html>
