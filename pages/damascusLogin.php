@@ -4,7 +4,7 @@
 <?php include "../lib/head.php" ?>
 
 <body>
-    <?php include "../lib/menu.php"?>
+    <?php include "../lib/menu.php" ?>
     
     <form>
         <fieldset>
@@ -21,7 +21,7 @@
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
 ?>
     
-<?php include "../lib/footer.php"?>
-<?php include "../lib/script.php"?>
+<?php include "../lib/footer.php" ?>
+<?php include "../lib/script.php" ?>
 </body>    
 </html>

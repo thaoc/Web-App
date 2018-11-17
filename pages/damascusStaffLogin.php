@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 
 <body>
-    <?php include "../lib/menu.php"?>
+    <?php include "../lib/menu.php" ?>
      <div class="form">
 
          <div id="login">   
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusOverrideCSS.css?v=1.0'>";
 ?>
     
-<?php include "../lib/footer.php"?>
-<?php include "../lib/script.php"?>
+<?php include "../lib/footer.php" ?>
+<?php include "../lib/script.php" ?>
 </body>    
 </html>
