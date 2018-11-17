@@ -3,7 +3,7 @@
 try
 {
     $home = $_SERVER['HOME'];
-    require_once $home . "/db-connect.php";
+    require_once "db-connect.php";
 }
 
 catch (Exception $e){
