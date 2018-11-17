@@ -8,7 +8,7 @@
  * Time: 1:42 PM
  */
 $home = $_SERVER['HOME'];
-require_once getcwd()."/lib/func/db-connect.php";
+require_once "db-connect.php";
 
 function listResidents() {
     databaseConnection("damascus_way");
