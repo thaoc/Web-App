@@ -13,7 +13,7 @@
  */
 
 $home = $_SERVER['HOME'];
-require_once $home ."../lib/func/db-connect.php";
+require_once $home ."/db-connect.php";
 
 // TODO: Create helper functions to get the contents of tables
 /*function createForm($formTitle, $formDescription)
