@@ -6,27 +6,71 @@ try {
 
 	databaseConnection("damascus_way");
 	$conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
+
+	// Check if connection is good
 	if($conn->connect_error)
 	{
 		die("Connection Failed! ". mysqli_connect_error());
 	} else
 	{
+		// Check to see if the current user is logged in.
+		// This currently does not work
+		// It needs to check the current focused resident.
 		if ($user != NULL)
 		{
-			$sql = "SELECT * FROM Daily_Planner WHERE Resident_ID_FK = $user";
+			// Form items
+			// Location info
+			$locationName = mysqli_real_escape_string($conn, $_REQUEST['locationName']);
+			$locationStreet = mysqli_real_escape_string($conn, $_REQUEST['locationStreet']);
+			$locationCity = mysqli_real_escape_string($conn, $_REQUEST['locationCity']);
+			$locationState = mysqli_real_escape_string($conn, $_REQUEST['locationState']);
+			$locationZip = mysqli_real_escape_string($conn, $_REQUEST['locationZip']);
+			$locationPhone = mysqli_real_escape_string($conn, $_REQUEST['locationPhone']);
 
-			if ($conn->query($sql) === TRUE)
-			{
-				echo $user;
-			} else
-			{
-				echo "Error: " . $sql . "<br>" . $conn->error;
-			}
+			// Location details
+			$locationDate = mysqli_real_escape_string($conn, $_REQUEST['locationDate']);
+			$locationPurpose = mysqli_real_escape_string($conn, $_REQUEST['locationPurpose']);
+			$locationTimeRequired = mysqli_real_escape_string($conn, $_REQUEST['locationTimeRequired']);
+			$locationContactName = mysqli_real_escape_string($conn, $_REQUEST['locationContactName']);
+			$locationTimeLeaving = mysqli_real_escape_string($conn, $_REQUEST['locationTimeLeaving']);
+			$locationTimeReturning = mysqli_real_escape_string($conn, $_REQUEST['locationTimeReturning']);
+			$locationTransportMode = mysqli_real_escape_string($conn, $_REQUEST['locationTransportMode']); // This might be a dropdown
+			$locationBusRoute = mysqli_real_escape_string($conn, $_REQUEST['locationBusRoute']); // can be null
+			$locationDriverName = mysqli_real_escape_string($conn, $_REQUEST['locationDriverName']); // can be null
+
+			// Sub query for resident_ID and staff_ID
+			/**********************************************************************************/
+            $residentID             = mysqli_real_escape_string($conn, $_REQUEST['residentID']);
+            $sql                      = "SELECT Resident_ID from Resident WHERE Resident_FName LIKE '$residentID'";
+            $result                   = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+                $raceID .= $row['Resident_ID'];
+            }
+
+            // Sub query for resident_ID and staff_ID
+            $staffID             = mysqli_real_escape_string($conn, $_REQUEST['staffID']);
+            $sql                      = "SELECT Staff_ID from Staff WHERE Staff_FName LIKE '$staffID'";
+            $result                   = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+                $raceID .= $row['Staff_ID'];
+            }
+			/**********************************************************************************/
+
+			// The final query to insert the items into the database
+			// This needs to be a stored procedure
+			$sql = "INSERT INTO Daily_Planner() VALUES ()";
 		}
 		else
 		{
 			echo "go annoy cole";
 		}
+	}
+
+	if ($conn->query($sql) === TRUE) {
+		echo "<div class='pop-up-insert'>New record created successfully</div>";
+	}
+	else {
+		echo "<div class='pop-up-insert'>Something went wrong: " . $sql . "<br>" . $onn->error . "</div>";
 	}
 
 	$conn->close();
