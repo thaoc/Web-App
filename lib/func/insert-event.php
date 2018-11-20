@@ -58,7 +58,43 @@ try {
 
 			// The final query to insert the items into the database
 			// This needs to be a stored procedure
-			$sql = "INSERT INTO Daily_Planner() VALUES ()";
+			$sql = "INSERT INTO Daily_Planner(
+								DP_Resident_ID_FK, 
+								DP_Staff_ID_FK, 
+								DP_Date, 
+								DP_Location_Name, 
+								DP_Location_Street, 
+								DP_Lcation_City, 
+								DP_Location_State,
+								DP_Location_Zip,
+								DP_Location_Phone,
+								DP_Purpose,
+								DP_Time_Needed,
+								DP_Contact_Name,
+								DP_leaving,
+								DP_Returning,
+								DP_Transport_Mode,
+								DP_Bus_Route,
+								DP_Driver_Name
+								) VALUES (
+								'$residentID',
+								'$staffID',
+								'$locationDate',
+								'$locationName',
+								'$locationStreet',
+								'$locationCity',
+								'$locationState',
+								'$locationZip',
+								'$locationPhone',
+								'$locationPurpose',
+								'$locationTimeRequired',
+								'$locationContactName',
+								'$locationTimeLeaving',
+								'$locationTimeReturning',
+								'$locationTransportMode',
+								'$locationBusRoute',
+								'$locationDriverName'
+								)";
 		}
 		else
 		{
