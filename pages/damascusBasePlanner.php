@@ -1,12 +1,27 @@
 <!doctype html>
 
 <html lang="en">
-<?php include "../lib/include/head.php" ?>
+<?php
+// Head stuff
+        /* Displays user information and some useful messages */
+        session_start();
+        // Check if user is logged in using the session variable
+        if ( $_SESSION['logged_in'] != 1 ) {
+            $_SESSION['message'] = "You must log in before viewing your profile page!";
+            header("location: error.php");
+        }
+        else {
+	        // Makes it easier to read
+	        $user_name = $_SESSION['user_name'];
+	        $email = $_SESSION['email'];
+	        $active = $_SESSION['active'];
+        }
+include "../lib/include/head.php" ?>
 
 	<body>
 
 		<?php include "../lib/include/menu.php" ?>
-		<h1>Daily Planner</h1>
+		<h1>Daily Planner: <?php echo $user_name ?></h1>
 		<p>Enter the information for one destination on your daily schedule in the form below, then click <strong>Add</strong>. Do this for each location you have on your schedule for the day.</p>
 			<div class="wrapper2"><br>
 			<h2>Event Entry</h2>
