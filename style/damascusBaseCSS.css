@@ -2,13 +2,21 @@
 
 Damascus Base CSS
 
+COLOR SCHEME:
+
+Black - #000000
+Kelly Green - #75A442
+Deep Teal - #037264
+Deep Olive Green - #3C491F
+Gold - #E7CD27
+Light Brown - #AC6243
+
 */
 
 header img {
     height: 4em;
 	margin-left: 1em;
 }
-
 
 main {
     color: white;
@@ -29,14 +37,6 @@ body {
 	overflow-x: hidden;
 }
 
-label
-{
-	font-family: open sans;
-	font-weight: bold;
-}
-
-/********************* Resident View Styling *******************/
-
 .button
 {
 	font-family: open sans;
@@ -48,37 +48,27 @@ label
 	text-align:center;
 }
 
-.residentButtons
-{
-	font-family: open sans;
-	font-weight: bold;
-	font-size: 1em;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-	height: 3em;
-	width: 10em;
-	text-align:center;
-	display: inline-block;
-}
-
-#outer
-{
-    width:100%;
-    text-align: center;
-}
-
-#radio label {
-  float: left;
-}
-#radio ul {
-  margin: 0;
-  list-style: none;
-  float: left;
-  display: inline-block;
-}
-
 .submit
 {
 	margin: 1em;
+}
+
+.wrapper
+{
+	background: white;
+	border: 2px solid black;
+	text-align:center;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/********************* BASE STAFF *******************/
+
+label
+{
+	font-family: open sans;
+	font-weight: bold;
 }
 
 .column
@@ -93,62 +83,210 @@ label
 	text-align:left;
 }
 
- /* Create two equal columns that floats next to each other */
-.column2 {
-    /*float: left;*/
-    width: 45em;
-    padding: 10px;
+/********************* END OF BASE STAFF ********************/
 
+/********************* BASE CHECK IN *******************/
+
+.hide {
+    display: none;
+}
+
+.highlight, .highlight2{
+    background-color: #75A442;
+    color: white;
+    border: 1.5px solid black;
+    width: 23em;
+    text-align: left;
+    padding-left: .5em;
+    border-radius: 3px;
+}
+
+.highlight2{
+    width: 11em;
+    margin-right: .8em;
+}
+
+.large {
+    width: 17em;
+}
+
+.green {
+    color: #037264; 
+    text-align: left;
+    text-decoration: underline;
+}
+
+.wrapper3
+{
+	background: white;
+	border: 2px solid #037264;
+    border-radius: 3px;
+	text-align:center;
+    width: 70em; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.column3{
+    margin-right: 1em;
+    margin-left: 1.5em;
+
+}
+
+.column3, .column4
+{
+    margin-top: 0;
+	display: inline-block;
+    text-align:left;
+    width: 30em;
+    border: 2px solid #037264;
+    border-radius: 3px;
+    padding: 1.5em;
+    padding-left: 2em;
+    height: 44em;
+}
+
+.column4{
+    margin-right: 3em;
+    margin-left: 1em;
+    float: right;
+}
+
+#a-link {
+    margin-left: 5em;
+}
+
+#commentsArea {
+    width: 23em;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.checkin {
+    width: 23em;
+}
+
+#dateNow, #timeNow {
+    width: 11em;
+    margin-right: .8em;
+}
+
+/********************* END OF BASE CHECK IN *******************/
+
+/********************* RESIDENT VIEW ******************/
+
+.tdSmall{
+    width: 5em;
+    text-align: right;
+}
+
+.table {
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 3pt 3pt 6pt #A9A9A9; /* light grey */
+    font-size: 16pt;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+#radio label {
+  float: left;
+}
+
+#radio ul {
+  margin: 0;
+  list-style: none;
+  float: left;
+  display: inline-block;
+}
+
+tr {
+    padding-left: 10px
+    padding-right: 10px;
 }
 
 .icon {
-    margin-left: 5pt;
     height: 30pt; 
 }
 
-.iconimg {
+/********************* END OF RESIDENT VIEW *******************/
+
+/********************* BASE PLANNER *******************/
+
+.right-align, .right-align-2 {
     float: right;
-    margin-right: 10pt;
+    margin-right: 2em;
+    width: 18em;
 }
 
-.inline {
-    display: inline;
-    float: left;
-    margin-left: 10pt;
+.right-align-2 {
+    width: 11em;
 }
 
-.row {
-    margin-left: 300pt;
-    margin-right: 300pt;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-} 
-
-/********************* End of Resident View *******************/
-
-.wrapper
-{
-	background: white;
-	border: 2px solid black;
-	text-align:center;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
+.totheright {
+    float: right;
+    margin-right: 2em;
 }
 
 .wrapper2
 {
 	background: white;
 	border: 2px solid black;
-	text-align:left;
+	text-align: center;
     width: 90%;
+    height: auto;
     margin: 0 auto;
 }
+
+hr {
+    border: 1.5px solid black;
+    margin: 0;
+}
+
+legend {
+    font-size: 1.5em;
+    color: white;
+    background: #75A442;
+    padding: .3em;
+    width: 10em;
+}
+
+.column5{
+    margin-right: 0;
+    margin-left: 3.6em;
+}
+
+.column5, .column6
+{
+    margin-top: 0;
+	display: inline-block;
+    text-align:left;
+    width: 38em;
+    border: 2px solid #75A442;
+    border-radius: 3px;
+    padding: 1.5em;
+    padding-left: 2em;
+    height: 40em;
+}
+
+.column6{
+    margin-left: 0;
+    margin-right: 3.8em;
+    float: right;
+}
+
+.eventlist {
+    width: 76em;
+    margin-left: 3.5em;
+    margin-right: 3.5em;
+}
+
+.icon2 {
+    height: 30pt;
+}
+
+/********************* END OF BASE PLANNER *******************/
+
 
 #login
 {

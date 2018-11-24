@@ -16,11 +16,71 @@ function residentNames() {
         die("Connection Failed! ". mysqli_connect_error());
     }
     
-    $sql = "SELECT * FROM select_first_last_resident ORDER BY Resident_LName";
-    $result = $conn->query($sql);
+    // YOUTUBE TUTORIAL ON SEARCH BUTTON
+    // https://www.youtube.com/watch?v=2XuxFi85GTw
 
-    displayName($result, $sql);
+    if(isset($_POST['search']))
+    {
+        $search = $_POST['search'];
+        
+        $sql = "SELECT Resident_LName, Resident_FName FROM Resident WHERE (`Resident_LName` LIKE '%$search%') OR (`Resident_FName` LIKE '%$search%')";
+        $result = $conn->query($sql);
+        displayName($result, $sql);
+        
+    } else {
+        $sql = "SELECT * FROM select_first_last_resident ORDER BY Resident_LName";
+        $result = $conn->query($sql);
+        
+        displayName($result, $sql);
+    }
+    
+    // close the database
     $conn->close();
 
 }
+
+/**************************************************************
+displayName() - display Resident Last Name and First Name only 
+**************************************************************/
+
+function displayName($result, $sql) {
+
+	if ($result ->num_rows > 0)
+	{
+        echo "<div class='table-responsive-lg'>";
+        echo '<table class="table">';
+
+		// Output each record
+		while ($row = $result ->fetch_assoc())
+		{
+            echo '<tr>';
+            echo '<td>' . $row['Resident_LName'] . ',' . '</td>';
+            echo '<td>' . $row['Resident_FName'] . '</td>';
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseCheckIn.php" title="Log Call">
+            <img src="../img/interface/png/phone-book.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Call History">
+            <img src="../img/interface/png/clock.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseResident.php" title="Profile">
+            <img src="../img/interface/png/user-3.png" class="icon"/></a>' . '</td>';
+            echo '<td class="tdSmall">' . '<a href="#" title="Case Notes">
+            <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
+            echo '</tr>';
+		}
+        echo '</table>';
+		echo "</div>";
+        
+// No results
+    }
+
+    else
+    {
+        echo "<div class='table-responsive-lg'>";
+            echo '<table class="table">';
+            echo '<tr>';
+                echo '<td><Strong>There are no search results.</Strong></td>';
+            echo '</tr>';
+            echo '</table>';
+		echo "</div>";
+    }
+} // end of displayName( )
 
