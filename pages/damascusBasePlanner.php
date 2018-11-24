@@ -6,20 +6,20 @@
 	<body>
 
 		<?php include "../lib/include/menu.php" ?>
-		<h2>Resident Daily Planner</h2>
+		<h1>Daily Planner</h1>
 		<p>Enter the information for one destination on your daily schedule in the form below, then click <strong>Add</strong>. Do this for each location you have on your schedule for the day.</p>
-			<div class="wrapper2">
-			<h1>Event Entry:</h1>
+			<div class="wrapper2"><br>
+			<h2>Event Entry</h2>
 				<form action="" method="POST">
-					<fieldset>
+					<fieldset class="column5">
 						<legend>Location Information</legend>
-						<label for="locationName">Location Name:<span class="req"></span></label>
-						<input type="text" size="65" name="locationName" id="locationName" value="Name of the location"/><br /><br />
-						<label for="locationStreet">Location Address:<span class="req"></span></label>
-						<input type="text" size="65" name="locationStreet" id="locationStreet" value="Street Address"/><br /><br />
-						<label for="locationCity">City<span class="req"></span></label> 
-						<input type="text" size="30" name="locationCity" id="locationCity" value="City">   <br /><br /> 
-						<label for="locationState">State<span class="req"></span></label>  <select name="locationState" id="locationState">
+						<label for="locationName">Location Name: <span class="req"></span></label> <input class="right-align" type="text" name="locationName" id="locationName" value="Name of the location"/>
+						<br /><br />
+						<label for="locationStreet">Location Address: <span class="req"></span></label><input class="right-align" type="text" name="locationStreet" id="locationStreet" value="Street Address"/>
+						<br /><br />
+						<label for="locationCity">City: <span class="req"></span></label> <input class="right-align" type="text"  name="locationCity" id="locationCity" value="City">
+						   <br /><br /> 
+						<label for="locationState">State: <span class="req"></span></label>  <select class="right-align" name="locationState" id="locationState">
 							<option value="">Select one . . .</option>
 							<option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
 							<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option>
@@ -41,41 +41,88 @@
 							<option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option>
 							<option value="WY">WY</option>
 						</select><br /><br />
-						<label for="locationZip">Zip Code:<span class="req"></span></label>  <input type="text" name="locationZip" id="locationZip" value="Zip Code" ><br /><br />
+						<label for="locationZip">Zip Code:<span class="req"></span></label>  <input class="right-align" type="text" name="locationZip" id="locationZip" value="Zip Code" ><br /><br />
+						<p>Contact Information for Location</p> 
+						<label for="contactName">Contact at Location:<span class="req"></span></label>  <input class="right-align" type="text" name="contactName" id="contactName" value="Name of person visiting"><br /><br />
+						<label for="locationPhone">Phone number at location: <span class="req"></span></label>  <input class="right-align" type="phone" name="locationPhone" id="locationPhone"><br />
 					</fieldset>
-					<fieldset>
-						<legend>Contact Information for Location:</legend>
-						<label for="contactName">Contact at Location:<span class="req"></span></label>  <input type="text" size="65" name="contactName" id="contactName" value="Name of person visiting"><br /><br />
-						<label for="locationPhone">Phone number for this location: <span class="req"></span></label>  <input type="phone" size="65" name="locationPhone" id="locationPhone"><br />
-					</fieldset>
-					<fieldset>
-						<legend>Appointment Information:</legend>
-						<label for="date">Date of Visit: <span class="req"></span></label> <input type="date" name="date" id="date"><br /><br />
+   
+					<fieldset class="column6">
+						<legend>Event Information</legend>
+						<label for="date">Date of Visit: <span class="req"></span></label> <input class="right-align-2" size="30" type="date" name="date" id="date"><br />
 						<p>Please enter the times below in military time (for example: 11AM would be 11:00 but 11PM would be 22:00)</p>
-						<label for="arriveTime">Estimated time of arrival at this location: <span class="req"></span></label>  <input type="time" size="65" name="arriveTime" id="arriveTime"><br /><br />
+						<label for="arriveTime">Estimated time of arrival at location: <span class="req"></span></label>  <input class="right-align-2" type="time" size="65" name="arriveTime" id="arriveTime"><br /><br />
 						<!-- looking for a way to make the "Driver" or "Routes" text boxes pop up only if that transportation mode is selected -->
-						<label for="transportMode">Method of transportation to location:</label><br />
-						<input type="radio" name="transportMode" value="car"> Car  <br />
-						<input type="radio" name="transportMode" value="bus"> Bus <br />
+						<label for="transportMode">Method of transportation to location:</label>
+                        <span class="totheright">
+						<input type="radio" name="transportMode" value="car"> Car  
+						<input type="radio" name="transportMode" value="bus"> Bus <br /></span>
 						<p>If you selected "Car" above, please enter the information for the driver in the space below.  If you selected "Bus", please enter the information for <strong>all</strong> of the routes you will take.</p>						
-						<input type="radio" name="transportMode" value="female">
-						<label for="departTime">Estimated time of departure from this location:<span class="req"></span></label> <input type="time" size="65" name="departTime" id="departTime"><br /><br />
-						<label for="estTotalTime">Estimated total time at location: <span class="req"></span></label><br/><input type="text" size="65" name="estTotalTime" id="estTotalTime" value="How long will you be here?"><br /><br />
+						
+						<label for="departTime">Estimated time of departure from location:<span class="req"></span></label> <input class="right-align-2" type="time"  name="departTime" id="departTime"><br /><br />
+						<label for="estTotalTime">Estimated total time at location: <span class="req"></span></label><input class="right-align-2" type="text" name="estTotalTime" id="estTotalTime" value="How long will you be here?"><br /><br />
 						<label for="reasonForVisit">Reason/Purpose of visit:<span class="req"></span></label><br />
-						<textarea rows="15" cols="15" name="reasonForVisit" id="reasonForVisit" value="Why will you be at this location at this time?">Why will you be at this location at this time?</textarea><br /><br /><br />
-					</fieldset>
-		
+						<textarea name="reasonForVisit" id="reasonForVisit" rows="4" cols="62" value="Why will you be at this location at this time?">Why will you be at this location at this time?</textarea><br /><br /><br />
+					</fieldset><br>
+
 					<div class="submit">
 						<input type="submit" value="Submit" class="button">
 					</div>
-			</form>
+			</form><br>
+                <hr><br>
+                
+                <h2>Event List</h2><br>
+                <div class="eventlist">
+                <div class="table-responsive-lg">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Arrive</th>
+                            <th>Depart</th>
+                            <th>Purpose</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Burger King</td>
+                            <td>11/13/2018</td>
+                            <td>12:00</td>
+                            <td>13:00</td>
+                            <td>Interview</td>
+                            <td>
+                                <a href="#" title="Edit">
+            <img src="../img/interface/png/pencil.png" class="icon2"/></a>
+                            </td>
+                            <td>
+                                <a href="#" title="Delete">
+            <img src="../img/interface/png/cancel.png" class="icon2"/></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>St Mary's</td>
+                            <td>11/13/2018</td>
+                            <td>17:00</td>
+                            <td>19:00</td>
+                            <td>AA Group</td>
+                            <td>
+                                <a href="#" title="Edit">
+            <img src="../img/interface/png/pencil.png" class="icon2"/></a>
+                            </td>
+                            <td>
+                                <a href="#" title="Delete">
+            <img src="../img/interface/png/cancel.png" class="icon2"/></a>
+                            </td>
+                        </tr>
+                    
+                    </table>    
+                
+                    </div></div>
+                
+                <br><br>
+                
 			</div>
-		<div class="wrapper">
-			<h3>Daily Planner Schedule</h3>
-			<p>Pulled from DB</p>
-		</div>
 				
-			</div>		
         <?php include "../lib/include/footer.php" ?>
 		  <?php include "../lib/include/script.php" ?>
 	</body>
