@@ -287,6 +287,25 @@ legend {
 
 /********************* END OF BASE PLANNER *******************/
 
+/********************* CASE NOTE *******************/
+
+.wrapper4 {
+    border: 1.5px solid black;
+    width: 75%;
+    background-color: white;
+    padding: 2em;
+    margin-left: 10em;
+    margin-right: 10em;
+    text-align: center;
+}
+
+#caseNoteTitle {
+    margin-left: -6em;
+    margin-right: 7em;
+    
+}
+
+/********************* END OF CASE NOTE *******************/
 
 #login
 {
