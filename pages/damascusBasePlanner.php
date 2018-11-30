@@ -2,6 +2,7 @@
 
 <html lang="en">
 <?php
+// @since Version 2.0
 // Head stuff
         /* Displays user information and some useful messages */
         session_start();
