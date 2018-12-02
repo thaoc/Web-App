@@ -9,8 +9,24 @@
 header('Content-Type: application/json');
 $response = array();
 $link = mysqli_connect('107.180.46.186', 'damascus_way_mob', 'b^l}+mS_T0FH', 'damascus_way');
-$result = mysqli_query($link, "SELECT * FROM Resident INNER JOIN Facility ON Resident.Resident_Facility_ID_FK=Facility.Facility_ID");
 
+if (isset($_GET['location'])) {
+
+    $location = $_GET['location'];
+
+    if ($location=='Rochester') {
+        $location = 1;
+        echo $location;
+    } elseif ($location=='Golden Valley') {
+        $location = 2;
+        echo $location;
+    } else {
+        echo "ERROR!!!";
+    }
+} else {
+    echo "NO GET!!";
+}
+$result = mysqli_query($link, "SELECT * FROM Resident INNER JOIN Facility ON Resident.Resident_Facility_ID_FK=Facility.Facility_ID WHERE Resident.Resident_Facility_ID_FK = $location");
 
 // check for empty result
 if (mysqli_num_rows($result) > 0) {
@@ -31,9 +47,8 @@ if (mysqli_num_rows($result) > 0) {
         $resident["Facility_Name"] = $row["Facility_Name"];
 
         $resident["check ins"] = array();
-        $callResult = mysqli_query($link, "SELECT * FROM Check_In WHERE Check_In_Resident_ID_FK = $resID ORDER BY Check_In_Time DESC");
+        $callResult = mysqli_query($link, "SELECT * FROM Check_In WHERE Check_In_Resident_ID_FK = $resID ORDER BY Check_In_Time DESC LIMIT 10");
         //echo "SELECT * FROM Call_In WHERE Call_In_Resident_ID_FK = $resID";
-        $count = 0;
         if ($callResult == TRUE) {
             while ($row2 = mysqli_fetch_array($callResult) and $count < 10) {
                 $checkin = array();
@@ -41,16 +56,14 @@ if (mysqli_num_rows($result) > 0) {
                 $checkin["Check_In_Status"] = $row2["Check_In_Status"];
                 $checkin["Check_In_Notes"] = $row2["Check_In_Notes"];
                 array_push($resident["check ins"], $checkin);
-                $count++;
             }
         } else {
             echo "FAIL!!!!!!";
         }
 
         $resident["call log"] = array();
-        $callResult = mysqli_query($link, "SELECT * FROM Call_In WHERE Call_In_Resident_ID_FK = $resID ORDER BY Call_In_DateTime DESC");
+        $callResult = mysqli_query($link, "SELECT * FROM Call_In WHERE Call_In_Resident_ID_FK = $resID ORDER BY Call_In_DateTime DESC LIMIT 10");
         //echo "SELECT * FROM Call_In WHERE Call_In_Resident_ID_FK = $resID";
-        $count = 0;
         if ($callResult == TRUE) {
             while ($row2 = mysqli_fetch_array($callResult) and $count < 10) {
                 $callLog = array();
@@ -60,7 +73,6 @@ if (mysqli_num_rows($result) > 0) {
                 $callLog["Call_In_To"] = $row2["Call_In_To"];
                 $callLog["Call_In_From"] = $row2["Call_In_From"];
                 array_push($resident["call log"], $callLog);
-                $count++;
             }
         } else {
             echo "FAIL!!!!!!";
