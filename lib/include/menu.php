@@ -26,7 +26,7 @@
                 echo "<a class='btn' href='" . HOME . "'><li>Home</li></a>";
                 echo "<a class='btn' href='" . RESIDENT . "'><li>Resident List</li></a>";
                 echo "<a class='btn' href='" . LOGIN . "'><li>Log In/Out</li></a>";
-				echo "<a class='btn' href='" . PROFILE . "'><li>Profile</li></a>";
+				echo "<a class='btn' href='" . PROFILE . "'><li>Intake Form</li></a>";
 
 				?>
 			</ul>
