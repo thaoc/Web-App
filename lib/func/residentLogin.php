@@ -24,4 +24,3 @@ else { // User exists
 		echo $_SESSION['message']; 
     }
 }
-?>

@@ -12,7 +12,7 @@
 <!-- TOP NAVBAR AND LOGO -->
 <header>
 	<?PHP
-	echo "<a id='header-img' href='" . $homeDir . "/index.php'><img src='" . $homeDir . "../img/DW Logo.png'></a>";
+	echo "<a id='menu-img-link' href='" . $homeDir . "/index.php'><img class='menu-img' src='" . $homeDir . "../img/DW Logo.png'></a>";
 	?>
 	<nav role='navigation'>
 		<div id="menuToggle">
