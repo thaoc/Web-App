@@ -99,41 +99,31 @@ include "../lib/include/head.php" ?>
                             <th></th>
                             <th></th>
                         </tr>
-                        <tr>
-                            <td>Burger King</td>
-                            <td>11/13/2018</td>
-                            <td>12:00</td>
-                            <td>13:00</td>
-                            <td>Interview</td>
-                            <td>
-                                <a href="#" title="Edit">
-            <img src="../img/interface/png/pencil.png" class="icon2"/></a>
-                            </td>
-                            <td>
-                                <a href="#" title="Delete">
-            <img src="../img/interface/png/cancel.png" class="icon2"/></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>St Mary's</td>
-                            <td>11/13/2018</td>
-                            <td>17:00</td>
-                            <td>19:00</td>
-                            <td>AA Group</td>
-                            <td>
-                                <a href="#" title="Edit">
-            <img src="../img/interface/png/pencil.png" class="icon2"/></a>
-                            </td>
-                            <td>
-                                <a href="#" title="Delete">
-            <img src="../img/interface/png/cancel.png" class="icon2"/></a>
-                            </td>
-                        </tr>
-                    
-                    </table>    
+                        <? php
+							$home = $_SERVER['HOME'];
+							require_once "db-connect.php";
+							
+							    databaseConnection("damascus_way");
+								$conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
+								if($conn->connect_error){
+									die("Connection Failed! ". mysqli_connect_error());
+								}
+
+								$sql = "SELECT dp_location, dp_date, dp_returning, dp_leaving   FROM Daily_Planner WHERE resident_id = $user_name";
+								$result = $conn->query($sql);
+								
+								if ($result -> num_rows > 0) {
+									while ($row = $result -> fetch_assoc()) 
+									{
+										echo "<tr><td>" . $row['dp_location'] . "</td><td>" . $row['dp_date'] . "</td><td>" . $row['dp_returning'] . "</td><td>" . $row['dp_leaving'] ."</td></tr>";
+										
+									}
+								}
+								$conn->close();
+						?>
+					</table>    
                 
-                    </div></div>
-                
+            
                 <br><br>
                 
 			</div>
