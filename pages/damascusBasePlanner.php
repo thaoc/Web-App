@@ -25,7 +25,7 @@ include "../lib/include/head.php" ?>
 		<p>Enter the information for one destination on your daily schedule in the form below, then click <strong>Add</strong>. Do this for each location you have on your schedule for the day.</p>
 			<div class="wrapper2"><br>
 			<h2>Event Entry</h2>
-				<form action="" method="POST">
+				<form action="../lib/func/insert-event.php" method="POST">
 					<fieldset class="column5">
 						<legend>Location Information</legend>
 						<label for="locationName">Location Name: <span class="req"></span></label> <input class="right-align" type="text" name="locationName" id="locationName" value="Name of the location"/>
