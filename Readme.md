@@ -15,8 +15,8 @@ Please be aware of the differences between getcwd() and \__DIR\__
 Vs using $_SERVER['HOME'] as they can cause changes in the behavior of the web files
 
 Below is the current folder structure for ease of reference.
+* _depreciated - for files that may have been superseded by other files (currently holding the old mobile connect files)
 * api - for mobile interaction file
-* android-connect - duplicate api folder for localhost work
 * img - for all images,
 * lib - for any php files that are not specifically a page
    * func - for functions that are not specifically rendered pages or page items
