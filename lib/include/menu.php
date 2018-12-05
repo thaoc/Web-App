@@ -12,7 +12,7 @@
 <!-- TOP NAVBAR AND LOGO -->
 <header>
 	<?PHP
-	echo "<img src='" . $homeDir . "../img/DW Logo.png'>";
+	echo "<a id='menu-img-link' href='" . $homeDir . "/index.php'><img class='menu-img' src='" . $homeDir . "../img/DW Logo.png'></a>";
 	?>
 	<nav role='navigation'>
 		<div id="menuToggle">
@@ -26,7 +26,7 @@
                 echo "<a class='btn' href='" . HOME . "'><li>Home</li></a>";
                 echo "<a class='btn' href='" . RESIDENT . "'><li>Resident List</li></a>";
                 echo "<a class='btn' href='" . LOGIN . "'><li>Log In/Out</li></a>";
-				echo "<a class='btn' href='" . PROFILE . "'><li>Profile</li></a>";
+				echo "<a class='btn' href='" . PROFILE . "'><li>Intake Form</li></a>";
 
 				?>
 			</ul>
