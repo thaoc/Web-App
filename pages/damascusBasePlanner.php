@@ -99,7 +99,7 @@ include "../lib/include/head.php" ?>
                             <th></th>
                             <th></th>
                         </tr>
-                        <? php
+                        <?php
 							$home = $_SERVER['HOME'];
 							require_once "db-connect.php";
 							
@@ -109,7 +109,7 @@ include "../lib/include/head.php" ?>
 									die("Connection Failed! ". mysqli_connect_error());
 								}
 
-								$sql = "SELECT dp_location, dp_date, dp_returning, dp_leaving   FROM Daily_Planner WHERE resident_id = $user_name";
+								$sql = "SELECT DP_Location_Name, DP_Date, DP_Returning, DP_Leaving   FROM Daily_Planner WHERE DP_Resident_ID_FK = $user_name";
 								$result = $conn->query($sql);
 								
 								if ($result -> num_rows > 0) {
