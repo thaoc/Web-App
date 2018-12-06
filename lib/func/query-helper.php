@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * WebProject - form-helper.php
+ * WebProject - query-helper.php
  * User: Cole
  * Email: sterlinn@csp.edu
  * Date: 11/6/2018
