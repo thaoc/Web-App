@@ -64,7 +64,7 @@ try {
 								DP_Date, 
 								DP_Location_Name, 
 								DP_Location_Street, 
-								DP_Lcation_City, 
+								DP_Location_City, 
 								DP_Location_State,
 								DP_Location_Zip,
 								DP_Location_Phone,

@@ -16,7 +16,8 @@
 	        $email = $_SESSION['email'];
 	        $active = $_SESSION['active'];
         }
-include "../lib/include/head.php" ?>
+include "../lib/include/head.php" 
+// require_once "db-connect.php"; ?>
 
 	<body>
 
@@ -100,26 +101,20 @@ include "../lib/include/head.php" ?>
                             <th></th>
                         </tr>
                         <? php
-							$home = $_SERVER['HOME'];
-							require_once "db-connect.php";
-							
-							    databaseConnection("damascus_way");
-								$conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
-								if($conn->connect_error){
-									die("Connection Failed! ". mysqli_connect_error());
-								}
-
-								$sql = "SELECT dp_location, dp_date, dp_returning, dp_leaving   FROM Daily_Planner WHERE resident_id = $user_name";
+						
+							try {
+								$userKey = "SELECT Resident_ID FROM Resident WHERE Resident_Username = $user_name";
+								$sql = "SELECT DP_Location_Name, DP_Date, DP_Returning, DP_Leaving FROM Daily_Planner WHERE DP_Resident_ID_FK = $userKey";
 								$result = $conn->query($sql);
 								
-								if ($result -> num_rows > 0) {
-									while ($row = $result -> fetch_assoc()) 
-									{
-										echo "<tr><td>" . $row['dp_location'] . "</td><td>" . $row['dp_date'] . "</td><td>" . $row['dp_returning'] . "</td><td>" . $row['dp_leaving'] ."</td></tr>";
-										
-									}
-								}
+								displayResult($result, $sql);
+								
 								$conn->close();
+							}
+							catch (Exception $e) {
+								echo $e;
+								
+							}
 						?>
 					</table>    
                 
