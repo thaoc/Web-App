@@ -1,6 +1,6 @@
 <?PHP
    $home = $_SERVER['HOME'];
-   require_once $home . "../lib/func/form-helper.php";
+   require_once $home . "../lib/func/query-helper.php";
    //ini_set('display_errors', 1);
    ?>
 <!doctype html>
