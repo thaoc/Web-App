@@ -100,7 +100,7 @@ include "../lib/include/head.php"
                             <th></th>
                             <th></th>
                         </tr>
-                        <? php
+                        <?php
 						
 							try {
 								$userKey = "SELECT Resident_ID FROM Resident WHERE Resident_Username = $user_name";
