@@ -56,13 +56,13 @@ function displayName($result, $sql) {
             echo '<tr>';
             echo '<td>' . $row['Resident_LName'] . ',' . '</td>';
             echo '<td>' . $row['Resident_FName'] . '</td>';
-            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseCheckIn.php" title="Log Call">
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseCallLog.php" title="Log Call">
             <img src="../img/interface/png/phone-book.png" class="icon"/></a>' . '</td>';
-            echo '<td class="tdSmall">' . '<a href="#" title="Call History">
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusCallHistory.php" title="Call History">
             <img src="../img/interface/png/clock.png" class="icon"/></a>' . '</td>';
             echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseResident.php" title="Profile">
             <img src="../img/interface/png/user-3.png" class="icon"/></a>' . '</td>';
-            echo '<td class="tdSmall">' . '<a href="#" title="Case Notes">
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusCaseNote.php" title="Case Notes">
             <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
             echo '</tr>';
 		}
@@ -77,7 +77,7 @@ function displayName($result, $sql) {
         echo "<div class='table-responsive-lg'>";
             echo '<table class="table">';
             echo '<tr>';
-                echo '<td><Strong>There are no search results.</Strong></td>';
+                echo '<td><Strong>Zero search results found.</Strong></td>';
             echo '</tr>';
             echo '</table>';
 		echo "</div>";

@@ -23,10 +23,6 @@ include "../lib/include/head.php" ?>
 		
 <h1> Residents </h1>
 
-<!-- Buttons to choose list or grid view -->
-<button onclick="listView()"><i class="fa fa-bars"></i> List</button>
-<button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
-
   <div class="search-container">
     <form action="damascusResidentView.php" method="POST">
       <input type="text" placeholder="Search.." name="search">
