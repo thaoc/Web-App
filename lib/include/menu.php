@@ -5,7 +5,7 @@
 
     define('HOME', $homeDir .'/index.php');
     define('RESIDENT', $homeDir .'/pages/damascusResidentView.php');
-    define('PROFILE', $homeDir .'/pages/damascusBaseResident.php');
+    define('INTAKE', $homeDir .'/pages/damascusBaseResident.php');
     define('LOGIN', $homeDir.'/pages/damascusLoginStaff.php');
 ?>
 
@@ -25,7 +25,7 @@
                 <?php
                 echo "<a class='btn' href='" . HOME . "'><li>Home</li></a>";
                 echo "<a class='btn' href='" . RESIDENT . "'><li>Resident List</li></a>";
-				echo "<a class='btn' href='" . PROFILE . "'><li>Intake Form</li></a>";
+				echo "<a class='btn' href='" . INTAKE . "'><li>Intake Form</li></a>";
                 echo "<a class='btn' href='" . LOGIN . "'><li>Log In/Out</li></a>";
 				?>
 			</ul>
