@@ -85,7 +85,7 @@ label
 
 /********************* END OF BASE STAFF ********************/
 
-/********************* BASE CHECK IN *******************/
+/********************* BASE CALL LOG *******************/
 
 .hide {
     display: none;
@@ -143,7 +143,7 @@ label
     border-radius: 3px;
     padding: 1.5em;
     padding-left: 2em;
-    height: 44em;
+    height: 37em;
 }
 
 .column4{
@@ -171,7 +171,7 @@ label
     margin-right: .8em;
 }
 
-/********************* END OF BASE CHECK IN *******************/
+/********************* END OF BASE CALL LOG *******************/
 
 /********************* RESIDENT VIEW ******************/
 
@@ -291,18 +291,25 @@ legend {
 
 .wrapper4 {
     border: 1.5px solid black;
-    width: 75%;
+    width: 85%;
     background-color: white;
     padding: 2em;
-    margin-left: 10em;
-    margin-right: 10em;
-    text-align: center;
+    margin-left: 6.5em;
+    margin-right: 6.5em;
 }
 
-#caseNoteTitle {
-    margin-left: -6em;
-    margin-right: 7em;
-    
+
+.txtbox {
+    margin-right: 2em;
+}
+
+#frmCaseNote {
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+button {
+    margin: 2em;
 }
 
 /********************* END OF CASE NOTE *******************/
@@ -507,7 +514,7 @@ a:hover
   margin: -100px 0 0 0;
   padding: 50px;
   padding-top: 125px;
-  right: -100px;
+  right: -50px;
   
   background: #ededed;
   list-style-type: none;
