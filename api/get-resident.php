@@ -16,10 +16,10 @@ if (isset($_GET['location'])) {
 
     if ($location=='Rochester') {
         $location = 1;
-        echo $location;
+        //echo $location;
     } elseif ($location=='Golden Valley') {
         $location = 2;
-        echo $location;
+        //echo $location;
     } else {
         echo "ERROR!!!";
     }
