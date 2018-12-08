@@ -1,32 +1,28 @@
+<?PHP
+   $home = $_SERVER['HOME'];
+   require_once $home . "../lib/func/form-helper.php";
+   //ini_set('display_errors', 1);
+   ?>
 <!doctype html>
-
 <html lang="en">
-<?php
-// Head stuff
-        /* Displays user information and some useful messages */
-        session_start();
-        // Check if user is logged in using the session variable
-        if ( $_SESSION['logged_in'] != 1 ) {
-            $_SESSION['message'] = "You must log in before viewing your profile page!";
-            header("location: error.php");
-        }
-        else {
-	        // Makes it easier to read
-	        $user_name = $_SESSION['user_name'];
-	        $email = $_SESSION['email'];
-	        $active = $_SESSION['active'];
-        }
-include "../lib/include/head.php" 
-// require_once "db-connect.php"; ?>
-
-	<body>
-
+   <?php
+   include "../lib/include/head.php";
+   require_once (getcwd()."/../lib/func/db-connect.php");
+      
+      databaseConnection("damascus_way");
+          $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
+          if($conn->connect_error){
+              die("Connection Failed! ". mysqli_connect_error());
+          }
+      ?>
+<html lang="en">
+	<body>	
 		<?php include "../lib/include/menu.php" ?>
-		<h1>Daily Planner: <?php echo $user_name ?></h1>
+		<h1>Daily Planner: <?php echo $user_name ?> </h1>
 		<p>Enter the information for one destination on your daily schedule in the form below, then click <strong>Add</strong>. Do this for each location you have on your schedule for the day.</p>
 			<div class="wrapper2"><br>
 			<h2>Event Entry</h2>
-				<form action="../lib/func/insert-event.php" method="POST">
+				<form action="lib/func/insert-event.php" method="POST">
 					<fieldset class="column5">
 						<legend>Location Information</legend>
 						<label for="locationName">Location Name: <span class="req"></span></label> <input class="right-align" type="text" name="locationName" id="locationName" value="Name of the location"/>
@@ -85,45 +81,8 @@ include "../lib/include/head.php"
 						<input type="submit" value="Submit" class="button">
 					</div>
 			</form><br>
-                <hr><br>
-                
-                <h2>Event List</h2><br>
-                <div class="eventlist">
-                <div class="table-responsive-lg">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Location</th>
-                            <th>Date</th>
-                            <th>Arrive</th>
-                            <th>Depart</th>
-                            <th>Purpose</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <?php
-						
-							try {
-								$userKey = "SELECT Resident_ID FROM Resident WHERE Resident_Username = $user_name";
-								$sql = "SELECT DP_Location_Name, DP_Date, DP_Returning, DP_Leaving FROM Daily_Planner WHERE DP_Resident_ID_FK = $userKey";
-								$result = $conn->query($sql);
-								
-								displayResult($result, $sql);
-								
-								$conn->close();
-							}
-							catch (Exception $e) {
-								echo $e;
-								
-							}
-						?>
-					</table>    
-                
-            
-                <br><br>
-                
-			</div>
-				
-        <?php include "../lib/include/footer.php" ?>
-		  <?php include "../lib/include/script.php" ?>
+		</div>
+		<?php include "../lib/include/footer.php" ?>
+		<?php include "../lib/include/script.php" ?>
 	</body>
 </html>
