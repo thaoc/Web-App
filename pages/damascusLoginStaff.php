@@ -5,7 +5,7 @@
 
 <body>
     <?php include "../lib/include/menu.php " ?>
-    <div class="conainer dw-container wrapper">
+    <div class="container dw-container wrapper">
         <form>
             <fieldset>
             <legend>Staff Login</legend><br>
