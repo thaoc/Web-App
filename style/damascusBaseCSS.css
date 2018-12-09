@@ -64,6 +64,34 @@ body {
     text-align: center;
 }
 
+.table {
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 3pt 3pt 6pt #A9A9A9; /* light grey */
+    font-size: 16pt;
+    font-family: 'Roboto', sans-serif; 
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: .5em;
+    text-align: left;
+    width: 12em;
+}
+
+.table tbody {
+    display: block;
+    overflow: auto;
+    height: 20em;
+    width: 100%;
+}
+
+.table thead tr {
+    display: block;
+  /*  background: #A9A9A9;  light gray */
+}
+
 /********************* BASE STAFF *******************/
 
 label
@@ -176,22 +204,13 @@ label
 
 /********************* RESIDENT VIEW ******************/
 
-.tdSmall{
-    width: 5em;
-    text-align: right;
+.table .tdSmall {
+    width: 7em;
+    text-align: center;
 }
-
-.table {
-    background-color: white;
-    border: 2px solid black;
-    box-shadow: 3pt 3pt 6pt #A9A9A9; /* light grey */
-    font-size: 16pt;
-    font-family: 'Roboto', sans-serif; 
-}
-
 
 #radio label {
-  float: left;
+    float: left;
 }
 
 #radio ul {
@@ -199,11 +218,6 @@ label
   list-style: none;
   float: left;
   display: inline-block;
-}
-
-tr {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .icon {
@@ -299,18 +313,9 @@ legend {
     margin-right: 6.5em;
 }
 
-
-.txtbox {
-    margin-right: 2em;
-}
-
 #frmCaseNote {
     margin-left: 10em;
     margin-right: 10em;
-}
-
-button {
-    margin: 2em;
 }
 
 /********************* END OF CASE NOTE *******************/
