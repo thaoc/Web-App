@@ -5,7 +5,7 @@ require_once getcwd() . "/../lib/func/db-connect.php";
 //echo getcwd() . "<br>";
 
 /*************************************************
- * Function callHistory()
+ * Function showNote()
  * Retrieves the call history of a resident
  **************************************************/
 function showNote() {
@@ -15,14 +15,13 @@ function showNote() {
         die("Connection Failed! ". mysqli_connect_error());
     }
     
-    $sql = "SELECT Case_Notes_Record, Case_Notes_DateTime, Case_Notes_Resident_ID_FK, Case_Notes_Staff_ID_FK, Case_Notes_Title FROM Case_Notes ORDER BY Case_Notes_DateTime DESC"; 
+    $sql = "SELECT Case_Notes_Record, DATE_FORMAT(Case_Notes_DateTime, '%m/%d/%Y %h:%i %p') Case_Notes_DateTime, Case_Notes_Resident_ID_FK, Case_Notes_Staff_ID_FK, Case_Notes_Title FROM Case_Notes ORDER BY Case_Notes_DateTime DESC"; 
     $result = $conn->query($sql);
     noteTable($result, $sql);   
-    
 }
 
 /**************************************************************
-showNote() - display case notes for resident 
+noteTable() - display case notes for resident 
 **************************************************************/
 function noteTable($result, $sql){
     
@@ -60,7 +59,7 @@ function noteTable($result, $sql){
         echo "<div class='table-responsive-lg'>";
             echo '<table class="table">';
             echo '<tr>';
-                echo '<td><Strong>There are no case notes for this resident.</Strong></td>';
+                echo '<td style="width: 15em;><Strong>There are no case notes for this resident.</Strong></td>';
             echo '</tr>';
             echo '</table>';
 		echo "</div>";

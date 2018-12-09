@@ -16,24 +16,37 @@ function residentNames() {
         die("Connection Failed! ". mysqli_connect_error());
     }
     
-    // YOUTUBE TUTORIAL ON SEARCH BUTTON
-    // https://www.youtube.com/watch?v=2XuxFi85GTw
-
     if(isset($_POST['search']))
     {
         $search = $_POST['search'];
         
-        $sql = "SELECT Resident_LName, Resident_FName FROM Resident WHERE (`Resident_LName` LIKE '%$search%') OR (`Resident_FName` LIKE '%$search%')";
-        $result = $conn->query($sql);
-        displayName($result, $sql);
+        if(isset($_POST['facility']))
+        {
+            $facility = $_POST['facility'];    
         
+            if($facility == "goldenvalley") {
+                $sql = "SELECT Resident_LName, Resident_FName FROM Resident WHERE (`Resident_Facility_ID_FK` = 2) AND (`Resident_LName` LIKE '%$search%' OR `Resident_FName` LIKE '%$search%')";
+                $result = $conn->query($sql);
+                displayName($result, $sql);
+            } else { 
+                $sql = "SELECT Resident_LName, Resident_FName FROM Resident WHERE (`Resident_Facility_ID_FK` = 1) AND (`Resident_LName` LIKE '%$search%' OR `Resident_FName` LIKE '%$search%')";
+                $result = $conn->query($sql);
+                displayName($result, $sql);
+            } 
+        // if facility is not selected, select search query for both facilities
+        } else {
+            $sql = "SELECT Resident_LName, Resident_FName FROM Resident WHERE (`Resident_LName` LIKE '%$search%') OR (`Resident_FName` LIKE '%$search%')";
+            $result = $conn->query($sql);
+            displayName($result, $sql);
+        } // end if facility
+        
+    // display all Residents    
     } else {
         $sql = "SELECT * FROM select_first_last_resident ORDER BY Resident_LName";
         $result = $conn->query($sql);
-        
         displayName($result, $sql);
-    }
-    
+    }// end if search
+   
     // close the database
     $conn->close();
 
@@ -49,6 +62,7 @@ function displayName($result, $sql) {
 	{
         echo "<div class='table-responsive-lg'>";
         echo '<table class="table">';
+        echo '<tbody>';
 
 		// Output each record
 		while ($row = $result ->fetch_assoc())
@@ -66,6 +80,7 @@ function displayName($result, $sql) {
             <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
             echo '</tr>';
 		}
+        echo '</tbody>';
         echo '</table>';
 		echo "</div>";
         
@@ -77,7 +92,7 @@ function displayName($result, $sql) {
         echo "<div class='table-responsive-lg'>";
             echo '<table class="table">';
             echo '<tr>';
-                echo '<td><Strong>Zero search results found.</Strong></td>';
+                echo '<td style="width: 15em;"><Strong>Zero search results found.</Strong></td>';
             echo '</tr>';
             echo '</table>';
 		echo "</div>";
