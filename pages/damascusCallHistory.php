@@ -14,7 +14,7 @@
 
     <?php include "../lib/include/menu.php" ?>
     
-    <h1>Call History</h1>
+    <h1 style="color:white;">Call History</h1>
     
 <!--    
     <div class="search-container">
@@ -25,9 +25,9 @@
     </div> 
 -->
     
-    <div class="container">
+    
         <?php callHistory(); ?>
-    </div>
+    
     
     
     <?php include "../lib/include/footer.php" ?>
