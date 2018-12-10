@@ -78,6 +78,8 @@ function displayName($result, $sql) {
             <img src="../img/interface/png/user-3.png" class="icon"/></a>' . '</td>';
             echo '<td class="tdSmall">' . '<a href="../pages/damascusCaseNote.php" title="Case Notes">
             <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
+	    echo '<td class="tdSmall">' . '<a href="../pages/damascusResidentPlanner.php" title="Resident Planner">
+            <img src="../img/interface/png/pencil.png" class="icon"/></a>' . '</td>';
             echo '</tr>';
 		}
         echo '</tbody>';
