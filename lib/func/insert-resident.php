@@ -27,7 +27,7 @@ $offenderRiskLevel     = mysqli_real_escape_string($conn, $_REQUEST['offenderRis
 $offenderAdmitDate     = mysqli_real_escape_string($conn, $_REQUEST['offenderAdmitDate']);
 $offenderExitDate      = mysqli_real_escape_string($conn, $_REQUEST['offenderExitDate']);
 $offenderSex           = mysqli_real_escape_string($conn, $_REQUEST['offenderSex']);
-$facility              = mysqli_real_escape_string($conn, $_REQUEST['facility']);
+$offenderFacility      = mysqli_real_escape_string($conn, $_REQUEST['offenderFacility']);
 $offenderRoomNumber    = mysqli_real_escape_string($conn, $_REQUEST['offenderRoomNumber']);
 $offenderCaseworker    = mysqli_real_escape_string($conn, $_REQUEST['offenderCaseworker']);
 $offenderCWPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offenderCWPhoneNumber']);
@@ -61,8 +61,8 @@ $offenderAgentAddress     = mysqli_real_escape_string($conn, $_REQUEST['offender
 $offenderUsername         = mysqli_real_escape_string($conn, $_REQUEST['offenderUsername']);
 $offenderPassword         = mysqli_real_escape_string($conn, $_REQUEST['offenderPassword']);
 
-$sql = "insert into Resident(Resident_FName, Resident_MName, Resident_LName, Resident_Photo, Resident_Sex, Resident_Eye_Color_ID_FK, Resident_Hair_Color_ID_FK, Resident_Race_ID_FK, Resident_Height, Resident_Weight, Resident_DOB, Resident_Offense_ID_FK, Resident_Risk_Level_ID_FK, Resident_Sex_Offender, Resident_Birthplace, Resident_Username, Resident_Password)
-    values ('$offenderFirstName', '$offenderMiddleName','$offenderLastName', '$offenderImage', '$offenderSex', '$eyeColorID', '$hairColorID', '$raceID', '$offenderHeight', '$offenderWeight', '$offenderDateOfBirth', '$offenseID', '$offenderRiskLevel', '$sexOffender', '$offenderBirthplace', '$offenderUsername', '$offenderPassword')";
+$sql = "insert into Resident(Resident_FName, Resident_MName, Resident_LName, Resident_Photo, Resident_Sex, Resident_Eye_Color_ID_FK, Resident_Hair_Color_ID_FK, Resident_Race_ID_FK, Resident_Height, Resident_Weight, Resident_DOB, Resident_Offense_ID_FK, Resident_Risk_Level_ID_FK, Resident_Sex_Offender, Resident_Birthplace, Resident_Username, Resident_Password, Resident_Facility_ID_FK)
+    values ('$offenderFirstName', '$offenderMiddleName','$offenderLastName', '$offenderImage', '$offenderSex', '$eyeColorID', '$hairColorID', '$raceID', '$offenderHeight', '$offenderWeight', '$offenderDateOfBirth', '$offenseID', '$offenderRiskLevel', '$sexOffender', '$offenderBirthplace', '$offenderUsername', '$offenderPassword', '$offenderFacility')";
 
 
 if ($conn->query($sql) === TRUE) {

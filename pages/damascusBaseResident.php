@@ -101,9 +101,9 @@
             </div>
             <div class="col-md-4">
                <label>Facility:<span class="req"></span></label></br>
-               <select name="facility" id="offenderInput">
-                  <option value="minnepolis">Minneapolis</option>
-                  <option value="rochester">Rochester</option>
+               <select name="offenderFacility" id="offenderInput">
+                  <option value="1">Rochester</option>
+                  <option value="2">Golden Valley</option>
                </select>
                </br></br>
             </div>
