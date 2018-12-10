@@ -25,60 +25,37 @@
 				<form action="lib/func/insert-event.php" method="POST">
 					<fieldset class="column5">
 						<legend>Location Information</legend>
-						<label for="locationName">Location Name: <span class="req"></span></label> <input class="right-align" type="text" name="locationName" id="locationName" value="Name of the location"/>
+						<label for="locationName">Location Name: <span class="req"></span></label> <input class="right-align form-control" type="text" name="locationName" id="locationName" value="Name of the location"/>
 						<br /><br />
-						<label for="locationStreet">Location Address: <span class="req"></span></label><input class="right-align" type="text" name="locationStreet" id="locationStreet" value="Street Address"/>
+						<label for="locationStreet">Location Address: <span class="req"></span></label><input class="right-align form-control" type="text" name="locationStreet" id="locationStreet" value="Street Address"/>
 						<br /><br />
-						<label for="locationCity">City: <span class="req"></span></label> <input class="right-align" type="text"  name="locationCity" id="locationCity" value="City">
+						<label for="locationCity">City: <span class="req"></span></label> <input class="right-align form-control" type="text"  name="locationCity" id="locationCity" value="City">
 						   <br /><br /> 
-						<label for="locationState">State: <span class="req"></span></label>  <select class="right-align" name="locationState" id="locationState">
-							<option value="">Select one . . .</option>
-							<option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
-							<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option>
-							<option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option>
-							<option value="GA">GA</option><option value="HI">HI</option>
-							<option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option>
-							<option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option>
-							<option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option>
-							<option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
-							<option value="MO">MO</option><option value="MT">MT</option>
-							<option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option>
-							<option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
-							<option value="NC">NC</option><option value="ND">ND</option>
-							<option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option>
-							<option value="PA">PA</option><option value="RI">RI</option>
-							<option value="SC">SC</option><option value="SD">SD</option>
-							<option value="TN">TN</option><option value="TX">TX</option>
-							<option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option>
-							<option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option>
-							<option value="WY">WY</option>
-						</select><br /><br />
-						<label for="locationZip">Zip Code:<span class="req"></span></label>  <input class="right-align" type="text" name="locationZip" id="locationZip" value="Zip Code" ><br /><br />
 						<p>Contact Information for Location</p> 
-						<label for="contactName">Contact at Location:<span class="req"></span></label>  <input class="right-align" type="text" name="contactName" id="contactName" value="Name of person visiting"><br /><br />
-						<label for="locationPhone">Phone number at location: <span class="req"></span></label>  <input class="right-align" type="phone" name="locationPhone" id="locationPhone"><br />
+						<label for="contactName">Contact at Location:<span class="req"></span></label>  <input class="right-align form-control" type="text" name="contactName" id="contactName" value="Name of person visiting"><br /><br />
+						<label for="locationPhone">Phone number at location: <span class="req"></span></label>  <input class="right-align form-control" type="phone" name="locationPhone" id="locationPhone"><br />
 					</fieldset>
    
 					<fieldset class="column6">
 						<legend>Event Information</legend>
-						<label for="date">Date of Visit: <span class="req"></span></label> <input class="right-align-2" size="30" type="date" name="date" id="date"><br />
-						<p>Please enter the times below in military time (for example: 11AM would be 11:00 but 11PM would be 22:00)</p>
-						<label for="arriveTime">Estimated time of arrival at location: <span class="req"></span></label>  <input class="right-align-2" type="time" size="65" name="arriveTime" id="arriveTime"><br /><br />
-						<!-- looking for a way to make the "Driver" or "Routes" text boxes pop up only if that transportation mode is selected -->
-						<label for="transportMode">Method of transportation to location:</label>
-                        <span class="totheright">
-						<input type="radio" name="transportMode" value="car"> Car  
+						<label for="date">Date of Visit: <span class="req"></span></label> <input class="right-align-2 form-control" size="30" type="date" name="date" id="date"><br />
+						<br/>
+						<label for="arriveTime">Estimated time of arrival at location: <span class="req"></span></label> 
+						<input type="time" class="without_ampm right-align-2 form-control"  name="arriveTime" id="arriveTime"><br /><br />
+						<label for="transportMode">Method of transportation to location:</label><br/>
+						<input type="radio" name="transportMode" value="car"> Car     <br />         
 						<input type="radio" name="transportMode" value="bus"> Bus <br /></span>
-						<p>If you selected "Car" above, please enter the information for the driver in the space below.  If you selected "Bus", please enter the information for <strong>all</strong> of the routes you will take.</p>						
-						
-						<label for="departTime">Estimated time of departure from location:<span class="req"></span></label> <input class="right-align-2" type="time"  name="departTime" id="departTime"><br /><br />
-						<label for="estTotalTime">Estimated total time at location: <span class="req"></span></label><input class="right-align-2" type="text" name="estTotalTime" id="estTotalTime" value="How long will you be here?"><br /><br />
+						 <br />
+						<label for="transportInfo">Bus Routes or Car Driver's Name/Phone</label><br/>
+						<input class="form-control" size="60" type="text" name="transportInfo" id="transportInfo" value="Enter the routes, if you selected Bus or the driver's name and number, if you selected Car" /><br /> 
+						<label for="departTime">Estimated time of departure from location:<span class="req"></span></label> <input type="time" class="without_ampm right-align-2 form-control" name="departTime" id="departTime"><br /><br />
+						<label for="estTotalTime">Estimated total time at location: <span class="req"></span></label><input class="right-align-2 form-control" type="text" name="estTotalTime" id="estTotalTime" value="How long will you be here?"><br /><br />
 						<label for="reasonForVisit">Reason/Purpose of visit:<span class="req"></span></label><br />
 						<textarea name="reasonForVisit" id="reasonForVisit" rows="4" cols="62" value="Why will you be at this location at this time?">Why will you be at this location at this time?</textarea><br /><br /><br />
 					</fieldset><br>
 
 					<div class="submit">
-						<input type="submit" value="Submit" class="button">
+						<input class="form-control" type="submit" value="Submit" class="button">
 					</div>
 			</form><br>
 		</div>
