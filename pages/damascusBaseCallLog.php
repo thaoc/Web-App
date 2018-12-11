@@ -4,10 +4,45 @@
 
 <?php
 session_start();
-include "../lib/include/head.php"
+include "../lib/include/head.php";
+$selectedResident = (int) $_GET['varname'];
+$displayResident = '';
+
+//---------------------------
+function CallLogReadResident($selectedResident)
+{
+    try
+    {
+        require_once "../lib/func/db-connect.php";
+        databaseConnection("damascus_way");
+        $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
+        if ($conn->connect_error)
+        {
+            die("Connection Failed! " . mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM select_first_last_resident WHERE Resident_ID = $selectedResident";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0)
+        {
+            $row = $result->fetch_assoc();
+            $displayResident = $row['Resident_FName'] . " " . $row['Resident_LName'];
+            return $displayResident;
+        }
+        $conn->close();
+    } catch (Exception $e)
+    {
+        $errmsg = $e->getMessage();
+        $displayResident = "There was an issue: " . $errmsg;
+        return $displayResident;
+    }
+}
+
 ?>
 
 <body>
+
 
 <!-- TOP NAVBAR AND LOGO -->
   
@@ -16,6 +51,9 @@ include "../lib/include/head.php"
 <div class="wrapper3">
 <div class="resident">
 	<h2>Call In Log</h2>
+    <?php
+    $displayResident = CallLogReadResident($selectedResident);
+    echo"<h3>for: " . $displayResident . "</h3>"?>
 	<div class="wrapper">
 	<h3>Resident information including photo, links to Profile & Daily Planner, etc.</h3>
 	<h3>Call Received by area populated by login information for staff member</h3>

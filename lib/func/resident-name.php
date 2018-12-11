@@ -59,7 +59,10 @@ displayName() - display Resident Last Name and First Name only
 
 function displayName($result, $sql) {
 
-	if ($result ->num_rows > 0)
+    $counter = 0;
+    $array = array();
+    $temp = '';
+    if ($result ->num_rows > 0)
 	{
         echo "<div class='table-responsive-lg'>";
         echo '<table class="table">';
@@ -68,10 +71,11 @@ function displayName($result, $sql) {
 		// Output each record
 		while ($row = $result ->fetch_assoc())
 		{
+            $temp =  $row['Resident_LName'];
             echo '<tr>';
             echo '<td>' . $row['Resident_LName'] . ',' . '</td>';
             echo '<td>' . $row['Resident_FName'] . '</td>';
-            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseCallLog.php" title="Log Call">
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseCallLog.php?varname=' . $row['Resident_ID'] . '" title="Log Call">
             <img src="../img/interface/png/phone-book.png" class="icon"/></a>' . '</td>';
             echo '<td class="tdSmall">' . '<a href="../pages/damascusCallHistory.php" title="Call History">
             <img src="../img/interface/png/layers.png" class="icon"/></a>' . '</td>';
@@ -82,6 +86,7 @@ function displayName($result, $sql) {
 	    echo '<td class="tdSmall">' . '<a href="../pages/damascusResidentPlanner.php" title="Resident Planner">
             <img src="../img/interface/png/pencil.png" class="icon"/></a>' . '</td>';
             echo '</tr>';
+            $counter++;
 		}
         echo '</tbody>';
         echo '</table>';
