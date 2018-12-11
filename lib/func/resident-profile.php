@@ -9,7 +9,9 @@ function listResidents() {
         die("Connection Failed! ". mysqli_connect_error());
     }
 	
-    $sql = "SELECT * FROM Resident WHERE Resident_ID = 9";
+	$residentID = 9;
+	
+    $sql = "SELECT * FROM Resident WHERE Resident_ID = $residentID";
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
 	{
@@ -29,7 +31,7 @@ function listResidents() {
 	echo '<td>' . $race . '</td>';
 	}
 	
-	$sql = "SELECT * FROM Resident WHERE Resident_ID = 9";
+	$sql = "SELECT * FROM Resident WHERE Resident_ID = $residentID";
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
 	{
@@ -49,7 +51,7 @@ function listResidents() {
 	echo '<td>' . $hairColor . '</td></br></br>';
 	}
 	
-	$sql = "SELECT * FROM Resident WHERE Resident_ID = 9";
+	$sql = "SELECT * FROM Resident WHERE Resident_ID = $residentID";
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
 	{
@@ -69,7 +71,7 @@ function listResidents() {
 		echo '<td>' . $eyeColor . "</td></br></br>";
 	}
 	
-	$sql = "SELECT * FROM Resident WHERE Resident_ID = 9";
+	$sql = "SELECT * FROM Resident WHERE Resident_ID = $residentID";
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
 	{
