@@ -3,7 +3,7 @@
 <html lang="en">
     
     <?php 
-    
+    session_start();
     $path = "../lib";
     chdir($path); // change directory
     require_once getcwd() . "/func/call-history.php";

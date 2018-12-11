@@ -3,7 +3,7 @@
 <html lang="en">
     
     <?php 
-    
+    session_start();
     include "../lib/include/head.php";
     
     require_once(getcwd( ) . "/../lib/func/case-note.php");    

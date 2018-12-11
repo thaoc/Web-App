@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "../lib/include/head.php" ?>
+<?php
+session_start();
+include "../lib/include/head.php"
+?>
 
 <body>
     <?php include "../lib/include/menu.php" ?>

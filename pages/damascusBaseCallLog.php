@@ -2,7 +2,10 @@
 
 <html lang="en">
 
-<?php include "../lib/include/head.php" ?>
+<?php
+session_start();
+include "../lib/include/head.php"
+?>
 
 <body>
 
