@@ -1,9 +1,5 @@
 <?php
 
-// Kill page if access directly
-if (!defined('ABSPATH')){
-	exit; // No Script Kiddies
-}
 try {
 	$home = $_SERVER['HOME'];
 	require_once "db-connect.php";

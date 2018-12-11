@@ -2,11 +2,6 @@
 // TODO: Please refactor this to use the db-connect.php
 /* User login process, checks if user exists and password is correct */
 
-// Kill page if access directly
-if (!defined('ABSPATH')){
-	exit; // No Script Kiddies
-}
-
 $Staff_Username = $mysqli->escape_string($_POST['Resident_Username']);
 $result = $mysqli->query("SELECT * FROM Resident WHERE Resident_Username='$Resident_Username'");
 if ( $result->num_rows == 0 ){ // User doesn't exist
