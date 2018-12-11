@@ -74,7 +74,7 @@ function displayName($result, $sql) {
             <img src="../img/interface/png/phone-book.png" class="icon"/></a>' . '</td>';
             echo '<td class="tdSmall">' . '<a href="../pages/damascusCallHistory.php" title="Call History">
             <img src="../img/interface/png/layers.png" class="icon"/></a>' . '</td>';
-            echo '<td class="tdSmall">' . '<a href="../pages/damascusBaseResident.php" title="Profile">
+            echo '<td class="tdSmall">' . '<a href="../pages/damascusResidentProfile.php" title="Profile">
             <img src="../img/interface/png/user-3.png" class="icon"/></a>' . '</td>';
             echo '<td class="tdSmall">' . '<a href="../pages/damascusCaseNote.php" title="Case Notes">
             <img src="../img/interface/png/document.png" class="icon"/></a>' . '</td>';
