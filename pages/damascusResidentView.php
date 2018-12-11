@@ -3,7 +3,8 @@
 <html lang="en">
  
 <?php 
-    
+// Always start a session
+session_start();
 /********** for testing purposes *************
 echo getcwd() . "<br>";
 $path = "../lib";

@@ -1,4 +1,5 @@
 <?PHP
+   session_start();
    $home = $_SERVER['HOME'];
    require_once $home . "../lib/func/query-helper.php";
    //ini_set('display_errors', 1);

@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "../lib/include/head.php" ?>
+<?php
+// Always start a session so variables can be passed accross
+session_start();
+include "../lib/include/head.php"
+?>
 
 <body>
     <?php include "../lib/include/menu.php" ?>
