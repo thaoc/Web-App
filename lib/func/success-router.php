@@ -23,6 +23,11 @@
  *
  */
 
+// Kill page if access directly
+if (!defined('ABSPATH')){
+	exit; // No Script Kiddies
+}
+
 function success($successMsg, $pageToRedirectTo) {
 
     // URL builder

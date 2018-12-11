@@ -1,4 +1,10 @@
 <?php
+
+// Kill page if access directly
+if (!defined('ABSPATH')){
+	exit; // No Script Kiddies
+}
+
 $home = $_SERVER['HOME'];
 
 require_once getcwd() . "/../lib/func/db-connect.php";

@@ -7,6 +7,11 @@
 * @return void
 */
 
+// Kill page if access directly
+if (!defined('ABSPATH')){
+	exit; // No Script Kiddies
+}
+
 function databaseConnection($databaseName)
 {
 	// Set up connection constants
