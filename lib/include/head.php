@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
     <?php
+        // Session start should go here
+        // session_start();
         echo "<link rel='icon' type='image/png' href='" . $homeDir . "/img/favicon.png'>";
         echo "<link rel='stylesheet' href='" . $homeDir . "../style/damascusBaseCSS.css?v=1.0'>";
     ?>
