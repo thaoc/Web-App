@@ -7,6 +7,12 @@
  * Date: 11/1/2018
  * Time: 1:42 PM
  */
+
+// Kill page if access directly
+if (!defined('ABSPATH')){
+	exit; // No Script Kiddies
+}
+
 $home = $_SERVER['HOME'];
 require_once "db-connect.php";
 

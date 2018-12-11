@@ -4,16 +4,16 @@
 <?php include "../lib/include/head.php" ?>
 
 <body>
-    <?php include "../lib/include/menu.php " ?>
+    <?php include "../lib/include/menu.php" ?>
     <div class="container dw-container wrapper">
         <form>
             <fieldset>
             <legend>Staff Login</legend><br>
-                <p>Username:
+                <label>Username:</label>
                 <input class="form-control" type="text" name="Staff_Username" id="Staff_Username"><br><br>
-                Password:
+                <label>Password:</label>
                 <input class="form-control" type="password" name="Staff_Password" id="Staff_Password"><br><br><br><br><br>
-                <input class="form-control" type="submit" id="btnLogin" value="Login"></p><br>
+                <input class="btn" type="submit" id="btnLogin" value="Login"></p><br>
             </fieldset>
         </form>
     </div>
