@@ -1,16 +1,18 @@
 <?php
-$home = $_SERVER['HOME'];
-require_once "db-connect.php";
+session_start();
+include "../lib/include/head.php";
+$residentID = (int) $_GET['varname'];
 
 function listResidents() {
-    databaseConnection("damascus_way");
-    $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
+	require_once "../lib/func/db-connect.php";
+        databaseConnection("damascus_way");
+        $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
     if($conn->connect_error){
         die("Connection Failed! ". mysqli_connect_error());
     }
 	
-	$residentID = 9;
-	
+	$residentID = (int) $_GET['varname'];
+
     $sql = "SELECT * FROM Resident WHERE Resident_ID = $residentID";
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
