@@ -1,10 +1,5 @@
 <?php
 
-// Kill page if access directly
-if (!defined('ABSPATH')){
-	exit; // No Script Kiddies
-}
-
 try
 {
     $home = $_SERVER['HOME'];
