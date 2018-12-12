@@ -7,12 +7,16 @@
     define('RESIDENT', $homeDir .'/pages/damascusResidentView.php');
     define('INTAKE', $homeDir .'/pages/damascusBaseResident.php');
     define('LOGIN', $homeDir.'/pages/damascusLoginStaff.php');
+
+    // Access restricted items
+    define('CALL-HISTORY', $homeDir.'/pages/damascusCallHistory.php');
+    define('CASE-NOTES', $homeDir.'/pages/damascusCaseNote.php');
 ?>
 
 <!-- TOP NAVBAR AND LOGO -->
 <header>
 	<?PHP
-	echo "<a id='menu-img-link' href='" . $homeDir . "/index.php'><img class='menu-img' src='" . $homeDir . "../img/DW Logo.png'></a>";
+	echo "<a id='menu-img-link' href='" . $homeDir . "/index.php'><img class='img-fluid menu-img' src='" . $homeDir . "../img/DW Logo.png'></a>";
 	?>
 	<nav role='navigation'>
 		<div id="menuToggle">
