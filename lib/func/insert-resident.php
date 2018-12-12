@@ -17,55 +17,59 @@ $offenderFirstName     = $_REQUEST['offenderFirstName'];
 $offenderMiddleName    = mysqli_real_escape_string($conn, $_REQUEST['offenderMiddleName']);
 $offenderLastName      = mysqli_real_escape_string($conn, $_REQUEST['offenderLastName']);
 $offenderImage         = mysqli_real_escape_string($conn, $_REQUEST['offenderImage']);
-$offenderBirthplace    = mysqli_real_escape_string($conn, $_REQUEST['offenderBirthplace']);
+$offenderCaseworker    = mysqli_real_escape_string($conn, $_REQUEST['offenderCaseworker']);
+$offenderCWPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offenderCWPhoneNumber']);
+
 $offenderOffense       = mysqli_real_escape_string($conn, $_REQUEST['offenderOffense']);
 $sql                   = "SELECT Offense_ID from Offense WHERE Offense_Type LIKE '$offenderOffense'";
 $result                = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
     $offenseID .= $row['Offense_ID'];
 }
-
 $sexOffender           = mysqli_real_escape_string($conn, $_REQUEST['sexOffender']);
 $offenderRiskLevel     = mysqli_real_escape_string($conn, $_REQUEST['offenderRiskLevel']);
+
 $offenderAdmitDate     = mysqli_real_escape_string($conn, $_REQUEST['offenderAdmitDate']);
 $offenderExitDate      = mysqli_real_escape_string($conn, $_REQUEST['offenderExitDate']);
-$offenderSex           = mysqli_real_escape_string($conn, $_REQUEST['offenderSex']);
 $offenderFacility      = mysqli_real_escape_string($conn, $_REQUEST['offenderFacility']);
 $offenderRoomNumber    = mysqli_real_escape_string($conn, $_REQUEST['offenderRoomNumber']);
-$offenderCaseworker    = mysqli_real_escape_string($conn, $_REQUEST['offenderCaseworker']);
-$offenderCWPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offenderCWPhoneNumber']);
+
+$offenderAgent            = mysqli_real_escape_string($conn, $_REQUEST['offenderAgent']);
+$offengerAgentPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offengerAgentPhoneNumber']);
+$offenderAgentAddress     = mysqli_real_escape_string($conn, $_REQUEST['offenderAgentAddress']);
+$offenderAgentEmail       = mysqli_real_escape_string($conn, $_REQUEST['offenderAgentEmail']);
+
 $offenderEyeColor      = mysqli_real_escape_string($conn, $_REQUEST['offenderEyeColor']);
 $sql                   = "SELECT Eye_Color_ID from Eye_Color WHERE Eye_Color_Description LIKE '$offenderEyeColor'";
 $result                = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
     $eyeColorID .= $row['Eye_Color_ID'];
 }
-
 $offenderHairColor        = mysqli_real_escape_string($conn, $_REQUEST['offenderHairColor']);
 $sql                      = "SELECT Hair_Color_ID from Hair_Color WHERE Hair_Color_Description LIKE '$offenderHairColor'";
 $result                   = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
     $hairColorID .= $row['Hair_Color_ID'];
 }
-
 $offenderHeight           = mysqli_real_escape_string($conn, $_REQUEST['offenderHeight']);
+
 $offenderWeight           = mysqli_real_escape_string($conn, $_REQUEST['offenderWeight']);
+$offenderSex           = mysqli_real_escape_string($conn, $_REQUEST['offenderSex']);
 $offenderRace             = mysqli_real_escape_string($conn, $_REQUEST['offenderRace']);
 $sql                      = "SELECT Race_ID from Race WHERE Race_Description LIKE '$offenderRace'";
 $result                   = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
     $raceID .= $row['Race_ID'];
 }
-
 $offenderDateOfBirth      = mysqli_real_escape_string($conn, $_REQUEST['offenderDateOfBirth']);
-$offenderAgent            = mysqli_real_escape_string($conn, $_REQUEST['offenderAgent']);
-$offengerAgentPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offengerAgentPhoneNumber']);
-$offenderAgentAddress     = mysqli_real_escape_string($conn, $_REQUEST['offenderAgentAddress']);
+$offenderBirthplace    = mysqli_real_escape_string($conn, $_REQUEST['offenderBirthplace']);
+$offenderTattoo           = mysqli_real_escape_string($conn, $_REQUEST['offenderTattoo']);
+
 $offenderUsername         = mysqli_real_escape_string($conn, $_REQUEST['offenderUsername']);
 $offenderPassword         = mysqli_real_escape_string($conn, $_REQUEST['offenderPassword']);
 
-$sql = "insert into Resident(Resident_FName, Resident_MName, Resident_LName, Resident_Photo, Resident_Sex, Resident_Eye_Color_ID_FK, Resident_Hair_Color_ID_FK, Resident_Race_ID_FK, Resident_Height, Resident_Weight, Resident_DOB, Resident_Offense_ID_FK, Resident_Risk_Level_ID_FK, Resident_Sex_Offender, Resident_Birthplace, Resident_Username, Resident_Password, Resident_Facility_ID_FK)
-    values ('$offenderFirstName', '$offenderMiddleName','$offenderLastName', '$offenderImage', '$offenderSex', '$eyeColorID', '$hairColorID', '$raceID', '$offenderHeight', '$offenderWeight', '$offenderDateOfBirth', '$offenseID', '$offenderRiskLevel', '$sexOffender', '$offenderBirthplace', '$offenderUsername', '$offenderPassword', '$offenderFacility')";
+$sql = "insert into Resident(Resident_FName, Resident_MName, Resident_LName, Resident_Photo, Resident_Sex, Resident_Eye_Color_ID_FK, Resident_Hair_Color_ID_FK, Resident_Race_ID_FK, Resident_Height, Resident_Weight, Resident_Tattoo, Resident_DOB, Resident_Offense_ID_FK, Resident_Risk_Level_ID_FK, Resident_Sex_Offender, Resident_Birthplace, Resident_Username, Resident_Password, Resident_Facility_ID_FK)
+    values ('$offenderFirstName', '$offenderMiddleName','$offenderLastName', '$offenderImage', '$offenderSex', '$eyeColorID', '$hairColorID', '$raceID', '$offenderHeight', '$offenderWeight', '$offenderTattoo', '$offenderDateOfBirth', '$offenseID', '$offenderRiskLevel', '$sexOffender', '$offenderBirthplace', '$offenderUsername', '$offenderPassword', '$offenderFacility')";
 
 
 if ($conn->query($sql) === TRUE) {
