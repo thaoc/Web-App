@@ -1,5 +1,5 @@
 <?php
-
+// Please comment your code
 $home = $_SERVER['HOME'];
 
 require_once("db-connect.php");
@@ -17,6 +17,8 @@ $offenderFirstName     = $_REQUEST['offenderFirstName'];
 $offenderMiddleName    = mysqli_real_escape_string($conn, $_REQUEST['offenderMiddleName']);
 $offenderLastName      = mysqli_real_escape_string($conn, $_REQUEST['offenderLastName']);
 $offenderImage         = mysqli_real_escape_string($conn, $_REQUEST['offenderImage']);
+
+// Caseworker sub-query to add the caseworker to the resident
 $offenderCaseworker    = mysqli_real_escape_string($conn, $_REQUEST['offenderCaseworker']);
 $offenderCWPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offenderCWPhoneNumber']);
 
@@ -34,6 +36,8 @@ $offenderExitDate      = mysqli_real_escape_string($conn, $_REQUEST['offenderExi
 $offenderFacility      = mysqli_real_escape_string($conn, $_REQUEST['offenderFacility']);
 $offenderRoomNumber    = mysqli_real_escape_string($conn, $_REQUEST['offenderRoomNumber']);
 
+// Sub-query to staff table (since you would not be adding staff while bringing in a resident,
+// rather assigning an agent to the resident at intake
 $offenderAgent            = mysqli_real_escape_string($conn, $_REQUEST['offenderAgent']);
 $offengerAgentPhoneNumber = mysqli_real_escape_string($conn, $_REQUEST['offengerAgentPhoneNumber']);
 $offenderAgentAddress     = mysqli_real_escape_string($conn, $_REQUEST['offenderAgentAddress']);
