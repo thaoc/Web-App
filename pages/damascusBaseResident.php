@@ -44,11 +44,23 @@
             </div>	
             <div class="col-md-4">
                <label class="form-control highlight">Caseworker<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderCaseworker" id="offenderInput" value=""/></br></br>
+               <select class="form-control checkin"  type="text" name="offenderCaseworker" id="offenderInput" value="">
+                <?PHP
+                // Loop through the runner table to build the <option> list
+                $sql = "SELECT Caseworker_ID, Caseworker_phone, Caseworker_LName, Caseworker_FName 
+                        FROM Caseworker ORDER BY Caseworker_LName";
+                $result = $conn->query($sql);
+                // $caseworkerPhone = $row['Caseworker_Phone'];
+                while($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['Caseworker_LName'] . "'>" . $row['Caseworker_LName'] . ", " . $row['Caseworker_FName'] . "</option>\n";
+                }
+                ?>
+                <br><br>
+                </select>
             </div>
             <div class="col-md-4">
                <label class="form-control highlight">CW Phone #:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="tel" name="offenderCWPhoneNumber" id="offenderInput" value=""/></br></br>
+               <?php echo "<input class='form-control checkin'  type='tel' name='offenderCWPhoneNumber' id='offenderInput' placeholder='Not Yet Implemented'></br></br>" ?>
             </div>			
          </div>
          <!-- End Row 1 -->
@@ -119,23 +131,35 @@
          </div>
          <!-- End Row 3 -->
 		 <div class ="row dw-row">
-            <div class="col-md-4">
+             <div class="col-md-4">
                <label class="form-control highlight">Agent Name:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderAgent" id="offenderInput" value=""/></br></br>
+               <select class="form-control checkin"  type="text" name="offenderAgent" id="offenderInput" value="">
+                 <?PHP
+                 // Loop through the runner table to build the <option> list
+                 $sql = "SELECT Staff_FName, Staff_LName
+                     FROM Staff ORDER BY Staff_LName";
+                 $result = $conn->query($sql);
+                 while($row = $result->fetch_assoc()) {
+                     echo "<option value='" . $row['Staff_LName'] . "'>" . $row['Staff_LName'] . ", " . $row['Staff_FName'] . "</option>\n";
+                 }
+
+                 ?>
+               </select>
+                 <br><br>
             </div>
             <div class="col-md-4">
                <label class="form-control highlight">Agent Phone #:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="tel" name="offengerAgentPhoneNumber" id="offenderInput" value=""/></br></br>
+               <input class="form-control checkin"  type="tel" name="offengerAgentPhoneNumber" id="offenderInput" value="" placeholder="Not Yet Implemented"/></br></br>
             </div>
             <div class="col-md-4">
                <label class="form-control highlight">Agent Address:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderAgentAddress" id="offenderInput" value=""/></br></br>
+               <input class="form-control checkin"  type="text" name="offenderAgentAddress" id="offenderInput" value="" placeholder="Not Yet Implemented"/></br></br>
             </div>
 			<div class="col-md-4">
 			   <label class="form-control highlight">Agent Email:<span class="req"></span></label></br>
-			   <input class="form-control checkin" type="text" name="offenderAgentEmail" id="offenderInput" value=""/></br></br>
+			   <input class="form-control checkin" type="text" name="offenderAgentEmail" id="offenderInput" value="" placeholder="Not Yet Implemented"/></br></br>
 			</div>
-         </div>
+         </div>-->
          <!-- End Row 4 -->
          <br>
          <hr>
