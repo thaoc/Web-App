@@ -36,23 +36,23 @@ function residentProfile() {
     $result = $conn->query($sql);
 	while ($row = $result ->fetch_assoc())
 	{
-	echo "<div class='table-responsive-lg'>";
-    echo '<table class="table">';	
-	echo '<tr>';
-	echo '<th>Name</th><th>Sex</th><th>Race</th></tr>';
-	echo "<td>" . $row['Resident_FName'] . " " . $row['Resident_MName'] . " " . $row['Resident_LName'] ."</td>";
-	echo '<td>' . $row['Resident_Sex'] . "</td>";
-	echo '<td>' . getDescription(Race, $row['Resident_Race_ID_FK']) . '</td>';
-	echo '<tr>';
-	echo '<th>Height</th><th>Weight</th><th>Hair Color</th></tr>';
-	echo '<td>' . $row['Resident_Height'] . "</td>";
-	echo '<td>' . $row['Resident_Weight'] . "</td>";
-	echo '<td>' . getDescription(Hair_Color, $row['Resident_Hair_Color_ID_FK']) . '</td>';
+		echo "<div class='table-responsive-lg'>";
+		echo '<table class="table">';	
+		echo '<tr>';
+		echo '<th>Name</th><th>Sex</th><th>Race</th></tr>';
+		echo "<td>" . $row['Resident_FName'] . " " . $row['Resident_MName'] . " " . $row['Resident_LName'] ."</td>";
+		echo '<td>' . $row['Resident_Sex'] . "</td>";
+		echo '<td>' . getDescription(Race, $row['Resident_Race_ID_FK']) . '</td>';
+		echo '<tr>';
+		echo '<th>Height</th><th>Weight</th><th>Hair Color</th></tr>';
+		echo '<td>' . $row['Resident_Height'] . "</td>";
+		echo '<td>' . $row['Resident_Weight'] . "</td>";
+		echo '<td>' . getDescription(Hair_Color, $row['Resident_Hair_Color_ID_FK']) . '</td>';
 		echo '<tr>';
 		echo '<th>Birthplace</th><th>Photo</th><th>Eye Color</th></tr>';
 		echo '<td>' . $row['Resident_Birthplace'] . '</td>';
 		echo '<td>' . $row['Resident_Photo'] . '</td>';
-echo '<td>' . getDescription(Eye_Color, $row['Resident_Eye_Color_ID_FK']) . '</td>';
+		echo '<td>' . getDescription(Eye_Color, $row['Resident_Eye_Color_ID_FK']) . '</td>';
 		echo '<tr>';
 		echo '<th>Sex Offender</th><th>Username</th><th>Password</th></tr>';
 		echo '<td>' . $row['Resident_Sex_Offender'] . '</td>';
