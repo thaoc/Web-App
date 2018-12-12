@@ -23,6 +23,7 @@
 			   
             
 		</div></br></br>
+      </div>
 		</form>
       
       <?php include "../lib/include/footer.php" ?>
