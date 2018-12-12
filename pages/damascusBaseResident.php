@@ -41,11 +41,15 @@
             <div class="col-md-4">
                <label class="form-control highlight">Photo:<span class="req"></span></label></br>
                <input class="form-control checkin"  type="file" name="offenderImage" id="offenderInput"></br></br>
+            </div>	
+            <div class="col-md-4">
+               <label class="form-control highlight">Caseworker<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="text" name="offenderCaseworker" id="offenderInput" value=""/></br></br>
             </div>
             <div class="col-md-4">
-               <label class="form-control highlight">Birthplace:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderBirthplace" id="offenderInput" value=""/></br></br>
-            </div>
+               <label class="form-control highlight">CW Phone #:<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="tel" name="offenderCWPhoneNumber" id="offenderInput" value=""/></br></br>
+            </div>			
          </div>
          <!-- End Row 1 -->
          <div class="row">
@@ -97,7 +101,7 @@
                <input class="form-control checkin"  type="date" name="offenderAdmitDate" id="offenderInput"/></br></br>
             </div>
             <div class="col-md-4">
-               <label class="form-control highlight">Exit Date:<span class="req"></span></label></br>
+               <label class="form-control highlight">Exit Date (Est.):<span class="req"></span></label></br>
                <input class="form-control checkin"  type="date" name="offenderExitDate" id="offenderInput"/></br></br>
             </div>
             <div class="col-md-4">
@@ -108,26 +112,35 @@
                </select>
                </br></br>
             </div>
-         </div>
-         <!-- End Row 3 -->
-         <br>
-         <hr>
-         <br>
-         <div class="row dw-row">
-            <div class="col-md-4">
+			<div class="col-md-4">
                <label class="form-control highlight">Room #:<span class="req"></span></label></br>
                <input class="form-control checkin"  type="text" name="offenderRoomNumber" id="offenderInput" value=""/></br></br>
             </div>
+         </div>
+         <!-- End Row 3 -->
+		 <div class ="row dw-row">
             <div class="col-md-4">
-               <label class="form-control highlight">Caseworker<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderCaseworker" id="offenderInput" value=""/></br></br>
+               <label class="form-control highlight">Agent Name:<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="text" name="offenderAgent" id="offenderInput" value=""/></br></br>
             </div>
             <div class="col-md-4">
-               <label class="form-control highlight">CW Phone #:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="tel" name="offenderCWPhoneNumber" id="offenderInput" value=""/></br></br>
+               <label class="form-control highlight">Agent Phone #:<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="tel" name="offengerAgentPhoneNumber" id="offenderInput" value=""/></br></br>
             </div>
+            <div class="col-md-4">
+               <label class="form-control highlight">Agent Address:<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="text" name="offenderAgentAddress" id="offenderInput" value=""/></br></br>
+            </div>
+			<div class="col-md-4">
+			   <label class="form-control highlight">Agent Email:<span class="req"></span></label></br>
+			   <input class="form-control checkin" type="text" name="offenderAgentEmail" id="offenderInput" value=""/></br></br>
+			</div>
          </div>
          <!-- End Row 4 -->
+         <br>
+         <hr>
+         <br>
+         
          <div class="row dw-row">
             <div class="col-md-4">
                <label class="form-control highlight" for="offenderEyeColor">Eye Color:<span class="req"></span></label></br>
@@ -200,23 +213,18 @@
                <label class="form-control highlight">Date of Birth:<span class="req"></span></label></br>
                <input class="form-control checkin"  type="date" name="offenderDateOfBirth" id="offenderInput" placeholder="YYYY-MM-DD"/></br></br>
             </div>
+			<div class="col-md-4">
+               <label class="form-control highlight">Birthplace:<span class="req"></span></label></br>
+               <input class="form-control checkin"  type="text" name="offenderBirthplace" id="offenderInput" value=""/></br></br>
+            </div>
+			<div class="col-md-4">
+               <label class="form-control highlight">Tattoos/Markings:<span class="req"></span></label></br>
+			   <input class="form-control checkin" type="text" name="offenderTattoo" id="offenderInput" value=""/></br></br>
+			</div>
          </div>
+		 
          <!-- End Row 6 -->
-         <div class ="row dw-row">
-            <div class="col-md-4">
-               <label class="form-control highlight">Agent Name:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderAgent" id="offenderInput" value=""/></br></br>
-            </div>
-            <div class="col-md-4">
-               <label class="form-control highlight">Agent Phone #:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="tel" name="offengerAgentPhoneNumber" id="offenderInput" value=""/></br></br>
-            </div>
-            <div class="col-md-4">
-               <label class="form-control highlight">Agent Address:<span class="req"></span></label></br>
-               <input class="form-control checkin"  type="text" name="offenderAgentAddress" id="offenderInput" value=""/></br></br>
-            </div>
-         </div>
-         <!-- End Row 7 -->
+
          <div class="row dw-row">
             <div class="col-md-4">
                <label class="form-control highlight">Username:<span class="req"></span></label></br>
@@ -227,7 +235,7 @@
                <input class="form-control checkin"  type="password" name="offenderPassword" id="offenderInput" value=""/></br></br>
             </div>
          </div>
-         <!-- End Row 8 -->
+         <!-- End Row 7 -->
          <div class="row dw-row">
             <div class="col-md-12">
                <div class="submit">
