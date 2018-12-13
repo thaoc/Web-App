@@ -3,13 +3,13 @@ session_start();
 include "../lib/include/head.php";
 $residentID = (int) $_GET['varname'];
 
-function getDescription($table, $id)
+function getDescription($column, $table, $id)
 {
 	require_once "../lib/func/db-connect.php";
         databaseConnection("damascus_way");
         $conn = new mysqli(DBF_SERVER, DBF_USER, DBF_PASSWORD, DBF_NAME);
 	
-	$sql  = "SELECT ".$table."_Description from ".$table." WHERE ".$table."_ID = '$id'";
+	$sql  = "SELECT ".$column." from ".$table." WHERE ".$table."_ID = '$id'";
 			$result = $conn->query($sql);
 
         if ($result->num_rows > 0)
@@ -61,7 +61,7 @@ function residentProfile() {
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Race:<span class="req"></span></label>';
-		echo getDescription(Race, $row['Resident_Race_ID_FK']);
+		echo getDescription(Race_Description, Race, $row['Resident_Race_ID_FK']);
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Height:<span class="req"></span></label>';
@@ -73,7 +73,7 @@ function residentProfile() {
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Hair Color:<span class="req"></span></label>';
-		echo getDescription(Hair_Color, $row['Resident_Hair_Color_ID_FK']);
+		echo getDescription(Hair_Color_Description, Hair_Color, $row['Resident_Hair_Color_ID_FK']);
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Tattoos:<span class="req"></span></label>';
@@ -85,7 +85,7 @@ function residentProfile() {
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Eye Color:<span class="req"></span></label>';
-		echo getDescription(Eye_Color, $row['Resident_Eye_Color_ID_FK']);
+		echo getDescription(Eye_Color_Description, Eye_Color, $row['Resident_Eye_Color_ID_FK']);
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">DOB:<span class="req"></span></label>';
@@ -105,8 +105,16 @@ function residentProfile() {
         echo '</div>';
 		echo '<div class="col-md-4">';
         echo '<label class="form-control highlight">Facility:<span class="req"></span></label>';
-		echo getDescription(Facility, $row['Resident_Facility_ID_FK']);
+		echo getDescription(Facility_Name, Facility, $row['Resident_Facility_ID_FK']);
         echo '</div>';
+		echo '<div class="col-md-4">';
+        echo '<label class="form-control highlight">Caseworker:<span class="req"></span></label>';
+		echo getDescription(Caseworker_FName, Caseworker, $row['Resident_Caseworker_ID_FK']);
+        echo '</div>';
+		/*echo '<div class="col-md-4">';
+        echo '<label class="form-control highlight">Agent:<span class="req"></span></label>';
+		echo getDescription(Agent_Intake, $row['Resident_Agent_Intake_ID_FK']);
+        echo '</div>';*/
 		echo '</div>';
 	}
     $conn->close();
